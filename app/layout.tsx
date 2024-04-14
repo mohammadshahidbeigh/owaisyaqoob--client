@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/main/Navbar";
-import Footer from "@/components/main/Footer";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,11 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
+        className={`${inter.className} bg-[#030014] overflow-y-hidden overflow-x-hidden`}
+        style={{ touchAction: "manipulation" }}
       >
-        <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );
