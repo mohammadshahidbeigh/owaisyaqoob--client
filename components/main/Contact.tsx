@@ -77,7 +77,7 @@ const Contact = () => {
       onSubmit={sendEmail}
     >
       <div
-        className="textContainer flex flex-col gap-4 flex-1 md:mr-8"
+        className="textContainer flex flex-col gap-4 flex-1 md:mr-8 "
         id="contact"
       >
         <h1 className="text-4xl md:text-6xl mb-4 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">

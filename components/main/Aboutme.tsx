@@ -5,7 +5,7 @@ import AcademyCardImg from "../sub/AboutmeDataProvider";
 const Projects = () => {
   return (
     <div
-      className="flex flex-col items-center justify-center py-20"
+      className="flex flex-col items-center justify-center py-20 "
       id="about-me"
     >
       <h1 className="text-3xl md:text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">

@@ -91,3 +91,14 @@ html {
 .animate-slide {
   animation: slide 10s linear infinite;
 }
+
+/* Hide scrollbar for all containers */
+/* For Chrome, Safari, and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: none;
+}
