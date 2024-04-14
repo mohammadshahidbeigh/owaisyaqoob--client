@@ -102,3 +102,48 @@ html {
 * {
   scrollbar-width: none;
 }
+/* globals.css */
+
+/* Reset default browser styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set body styles */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #030014;
+  color: #ffffff;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #030014;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+/* Main content styles */
+.main-content {
+  padding: 2rem;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #030014;
+  color: #ffffff;
+  padding: 2rem;
+  text-align: center;
+}
