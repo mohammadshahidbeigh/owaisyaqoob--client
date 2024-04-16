@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {/* Add other meta tags or head elements here */}
       </Head>
       <html lang="en">
