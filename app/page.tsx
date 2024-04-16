@@ -1,4 +1,3 @@
-// import Encryption from "@/components/main/Encryption";
 import Hero from "@/components/main/Hero";
 import Academy from "@/components/main/Academy";
 import Aboutme from "@/components/main/Aboutme";
