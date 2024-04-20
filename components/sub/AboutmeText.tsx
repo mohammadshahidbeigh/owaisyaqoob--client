@@ -2,17 +2,19 @@ import Image from "next/image";
 import React from "react";
 
 interface Props {
-  src: string;
   title: string;
   description: string;
 }
 
-const AcademyCard = ({ src, title, description }: Props) => {
+const AcademyCard = ({ title, description }: Props) => {
+  // Import images directly here if needed
+
   return (
     <div className="relative flex items-center gap-6 overflow-hidden rounded-lg shadow-lg">
       <div className="absolute inset-0 overflow-hidden opacity-0 invisible">
+        {/* Import image directly here */}
         <Image
-          src={src}
+          src="/path/to/your/image.jpg" // Provide the path to your image
           alt={title}
           layout="fill"
           objectFit="cover"

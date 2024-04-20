@@ -78,7 +78,13 @@ const HeroContent = () => {
         variants={slideInFromRight(0)}
         className="w-full h-full flex justify-end items-center z-0 md:mt-0"
       >
-        <Image src="/hero.png" alt="work icons" height={650} width={650} />
+        <Image
+          src="/hero.png"
+          alt="Picture of the fighter"
+          priority={true}
+          height={650}
+          width={650}
+        />
       </motion.div>
     </motion.div>
   );

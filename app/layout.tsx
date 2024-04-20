@@ -21,11 +21,8 @@ export default function RootLayout({
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {/* Add other meta tags or head elements here */}
       </Head>
       <html lang="en">
-        {" "}
-        {/* Add <html> tag here */}
         <body
           className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
         >
