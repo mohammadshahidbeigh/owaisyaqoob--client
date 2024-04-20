@@ -16,7 +16,7 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="relative flex flex-col md:flex-row items-center justify-center px-6 mt-24 md:mt-12 w-full z-[20]"
+      className="relative flex flex-col md:flex-row items-center justify-center px-6 mt-24 md:mt-12 w-full z-[20] overflow-x-hidden" // Added overflow-x-hidden
     >
       {/* Main Content */}
       <div className="h-full w-full flex flex-col gap-8 md:ml-16 justify-center m-auto text-start">
@@ -63,7 +63,7 @@ const HeroContent = () => {
       </div>
 
       {/* Behind Main Content */}
-      {/* <motion.div
+      <motion.div
         style={{ fontSize: "16vw" }} // Adjust the value to your desired size
         className="absolute bottom-[-10%] whitespace-nowrap text-white text-opacity-5 font-bold z-[-1]"
         initial="initial"
@@ -71,7 +71,7 @@ const HeroContent = () => {
         variants={sliderVariants(0)}
       >
         J&K&rsquo;s First Professional MMA Fighter
-      </motion.div> */}
+      </motion.div>
 
       {/* Image */}
       <motion.div

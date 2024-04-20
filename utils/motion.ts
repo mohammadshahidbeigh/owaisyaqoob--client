@@ -18,7 +18,7 @@ export function sliderVariants(delay: number) {
       x: "100%", // Start the text off-screen to the right
     },
     animate: {
-      x: "-200%", // Move the text across the screen to the left
+      x: "-100%", // Move the text across the screen to the left
       transition: {
         repeat: Infinity, // Repeat the animation infinitely
         duration: 10, // Set the duration of each animation cycle
