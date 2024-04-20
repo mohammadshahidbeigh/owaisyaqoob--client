@@ -19,10 +19,13 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
       <html lang="en">
+        <Head>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+        </Head>
         <body
           className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
         >
