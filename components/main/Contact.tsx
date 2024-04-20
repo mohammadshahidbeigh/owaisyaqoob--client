@@ -80,21 +80,21 @@ const Contact = () => {
         className="textContainer flex flex-col gap-4 flex-1 md:mr-8 "
         id="contact"
       >
-        <h1 className="text-4xl md:text-6xl mb-4 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+        <h1 className="text-3xl md:text-6xl mb-4 ml-3 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
           Contact Me
         </h1>
-        <div className="item font-bold text-white text-lg md:text-xl ml-2">
+        <div className="item font-bold text-white text-lg md:text-xl ml-3">
           <h2>Mail:</h2>
           <span className="text-sm md:text-base">Owaisyaqoob534@gmail.com</span>
         </div>
-        <div className="item font-bold text-white text-lg md:text-xl ml-2 ">
+        <div className="item font-bold text-white text-lg md:text-xl ml-3 ">
           <h2>Academy Address:</h2>
           <span className="text-sm md:text-base">
             Near Shaheed Park, Opposite Alamdar Masjid 3rd Floor Dangerpora,
             Pulwama.
           </span>
         </div>
-        <div className="item font-bold text-white text-lg md:text-xl ml-2">
+        <div className="item font-bold text-white text-lg md:text-xl ml-3">
           <h2>Phone / Whatsapp:</h2>
           <span className="text-sm md:text-base">
             +91 97975 55443 /<br></br> +91 9682347775
