@@ -1,16 +1,20 @@
 // RootLayout.tsx
-import type { Metadata } from "next";
+import type { Viewport } from "next";
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import Navbar from "@/components/main/Navbar";
 import Footer from "@/components/main/Footer";
 import "./globals.css";
+
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Owais Yaqoob",
-  description: "This is my portfolio",
-};
+// Define the generateViewport function
+export function generateViewport(): Viewport {
+  return {
+    initialScale: 1,
+    width: "device-width",
+  };
+}
 
 export default function RootLayout({
   children,
@@ -20,12 +24,6 @@ export default function RootLayout({
   return (
     <>
       <html lang="en">
-        <Head>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
-        </Head>
         <body
           className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
         >
