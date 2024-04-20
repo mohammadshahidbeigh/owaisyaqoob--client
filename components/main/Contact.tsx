@@ -102,7 +102,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="formContainer flex-1 md:ml-8 mt-12">
+      <div className="formContainer flex-1 ml-2 mr-2 mt-12">
         <div className="space-y-4 ">
           <input
             type="text"
