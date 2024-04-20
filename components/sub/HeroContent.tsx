@@ -75,17 +75,18 @@ const HeroContent = () => {
           width={650}
         />
       </motion.div>
-
-      {/* Text */}
-      <motion.div
-        style={{ fontSize: "16vw" }} // Adjust the value to your desired size
-        className="absolute bottom-[-10%] whitespace-nowrap text-white text-opacity-5 font-bold z-[-1]"
-        initial="initial"
-        animate="animate"
-        variants={sliderVariants(0)}
-      >
-        J&K&rsquo;s First Professional MMA Fighter
-      </motion.div>
+      <section>
+        {/* Text */}
+        <motion.div
+          style={{ fontSize: "16vw" }} // Adjust the value to your desired size
+          className="absolute bottom-[-10%] whitespace-nowrap text-white text-opacity-5 font-bold z-[-1]"
+          initial="initial"
+          animate="animate"
+          variants={sliderVariants(0)}
+        >
+          J&K&rsquo;s First Professional MMA Fighter
+        </motion.div>
+      </section>
     </motion.div>
   );
 };
