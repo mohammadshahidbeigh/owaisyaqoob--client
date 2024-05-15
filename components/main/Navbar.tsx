@@ -91,7 +91,7 @@ const Navbar = () => {
               </svg>
             </button>
 
-            <div className="flex flex-col items-center justify-between gap-16 font-bold  mt-12 bg-indigo-700 backdrop-filter backdrop-blur-md bg-opacity-25 py-16 px-16 rounded z-0  ">
+            <div className="flex flex-col items-center justify-between gap-16 font-bold  mt-12 bg-[#030014]  py-16 px-16 rounded z-0  ">
               <a
                 href="#home"
                 className="cursor-pointer text-white text-lg mb-4 hover:border-b-4 hover:scale-125"
