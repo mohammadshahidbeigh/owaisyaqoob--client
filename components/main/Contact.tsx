@@ -88,7 +88,7 @@ const Contact = () => {
           <span className="text-sm md:text-base">Owaisyaqoob534@gmail.com</span>
         </div>
         <div className="item font-bold text-white text-lg md:text-xl ml-3 ">
-          <h2>Academy Address:</h2>
+          <h2>Address:</h2>
           <span className="text-sm md:text-base">
             Near Shaheed Park, Opposite Alamdar Masjid 3rd Floor Dangerpora,
             Pulwama.
