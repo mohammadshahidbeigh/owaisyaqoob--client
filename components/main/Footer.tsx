@@ -135,7 +135,7 @@ const Footer: React.FC = () => {
         </Modal>
 
         <div className="mb-[3px] text-[15px] text-center">
-          &copy; Lions Den MMA 2024 Inc. All rights reserved
+          &copy; Lions Den MAA 2024 Inc. All rights reserved
         </div>
       </div>
     </div>
