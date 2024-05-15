@@ -67,7 +67,7 @@ const PrivacyPolicy: React.FC = () => {
         <li>By email: Owaisyaqoob534@gmail.com</li>
         <li>By phone: +91 97975 55443 / +91 9682347775</li>
         <li>
-          By mail: Near Shaheed Park, Opposite Alamdar Masjid 3rd Floor
+          By address: Near Shaheed Park, Opposite Alamdar Masjid 3rd Floor
           Dangerpora, Pulwama
         </li>
       </ul>
