@@ -15,18 +15,31 @@ export function slideInFromLeft(delay: number) {
 export function sliderVariants(delay: number) {
   return {
     initial: {
-      x: "100%", // Start the text off-screen to the right
+      x: 0,
     },
     animate: {
-      x: "-100%", // Move the text across the screen to the left
+      x: -4550,
       transition: {
-        repeat: Infinity, // Repeat the animation infinitely
-        duration: 10, // Set the duration of each animation cycle
-        ease: "linear", // Use linear easing for constant speed
+        repeat: Infinity,
+        repeatType: "mirror" as "mirror", // Specify the correct repeatType
+        duration: 10,
       },
     },
   };
 }
+
+// export function slidingTextContainer() {
+//   return {
+//     position: 'absolute',
+//     fontSize: '50vh',
+//     bottom: '-120px',
+//     whiteSpace: 'nowrap',
+//     color: '#ffeeee09',
+//     width: '50%',
+//     fontWeight: 'bold',
+//     zIndex: 0,
+//   };
+// }
 
 export function slideInFromRight(delay: number) {
   return {
