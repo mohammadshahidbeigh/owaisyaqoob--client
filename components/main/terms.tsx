@@ -15,7 +15,7 @@ const Terms: React.FC = () => {
       <h1 className="text-2xl font-bold mb-4">Terms and Conditions</h1>
       <p>Effective date: {currentDate}</p>
       <p>
-        Welcome to Martial Arts Club Academy. These terms and conditions outline
+        Welcome to Lions Den Martial Arts Academy. These terms and conditions outline
         the rules and regulations for the use of our services and website.
       </p>
       <h2 className="text-1xl font-bold mt-4">Acceptance of Terms</h2>
@@ -38,7 +38,7 @@ const Terms: React.FC = () => {
       </p>
       <h2 className="text-1xl font-bold mt-4">Liability</h2>
       <p>
-        Martial Arts Club Academy is not liable for any injuries sustained
+        Lions Den Martial Arts Academy is not liable for any injuries sustained
         during training. Members participate at their own risk and are
         encouraged to consult with a physician before starting any new fitness
         program.

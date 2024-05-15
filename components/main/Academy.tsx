@@ -10,7 +10,7 @@ const Projects = () => {
         style={{ background: "#030014" }}
       >
         <h1 className="text-2xl md:text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 border-b-8 border-purple-500">
-          Martial Arts Club Academy
+          Lions Den Martial Arts Academy
         </h1>
       </div>
 

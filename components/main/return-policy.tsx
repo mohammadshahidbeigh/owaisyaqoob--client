@@ -15,8 +15,9 @@ const ReturnPolicy: React.FC = () => {
       <h1 className="text-2xl font-bold mb-4">Return and Refund Policy</h1>
       <p>Effective date: {currentDate}</p>
       <p>
-        Thank you for joining Martial Arts Club Academy. If you are not entirely
-        satisfied with our services or products, we&apos;re here to help.
+        Thank you for joining Lions Den Martial Arts Academy. If you are not
+        entirely satisfied with our services or products, we&apos;re here to
+        help.
       </p>
       <h2 className="text-1xl font-bold mt-4">Membership Fees</h2>
       <p>

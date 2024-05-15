@@ -85,20 +85,44 @@ const Contact = () => {
         </h1>
         <div className="item font-bold text-white text-lg md:text-xl ml-3">
           <h2>Email:</h2>
-          <span className="text-sm md:text-base">Owaisyaqoob534@gmail.com</span>
+          <a
+            href="mailto:Owaisyaqoob534@gmail.com"
+            className="text-sm md:text-base text-white underline"
+          >
+            Owaisyaqoob534@gmail.com
+          </a>
         </div>
         <div className="item font-bold text-white text-lg md:text-xl ml-3 ">
           <h2>Address:</h2>
-          <span className="text-sm md:text-base">
+          <a
+            href="https://www.google.com/maps/place/LION'S+DEN+MARTIAL+ARTS+ACADEMY/@33.8717102,74.9006797,17z/data=!3m1!4b1!4m6!3m5!1s0x38e1f5a4453b6b81:0x7c37fc9584632030!8m2!3d33.8717102!4d74.9032546!16s%2Fg%2F11n5bqgvqx?entry=ttu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm md:text-base text-white underline"
+          >
             Near Shaheed Park, Opposite Alamdar Masjid 3rd Floor Dangerpora,
             Pulwama.
-          </span>
+          </a>
         </div>
+
         <div className="item font-bold text-white text-lg md:text-xl ml-3">
           <h2>Phone-Whatsapp:</h2>
-          <span className="text-sm md:text-base">
-            +91 97975 55443 /<br></br> +91 9682347775
-          </span>
+          <a
+            href="https://wa.me/919797555443"
+            className="text-sm md:text-base text-white underline block"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            +91 97975 55443
+          </a>
+          <a
+            href="https://wa.me/919682347775"
+            className="text-sm md:text-base text-white underline block"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            +91 96823 47775
+          </a>
         </div>
       </div>
 
