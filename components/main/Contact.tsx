@@ -95,7 +95,7 @@ const Contact = () => {
           </span>
         </div>
         <div className="item font-bold text-white text-lg md:text-xl ml-3">
-          <h2>Phone / Whatsapp:</h2>
+          <h2>Phone-Whatsapp:</h2>
           <span className="text-sm md:text-base">
             +91 97975 55443 /<br></br> +91 9682347775
           </span>
