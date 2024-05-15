@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#030014] backdrop-blur-md z-50 px-10 md:px-20 lg:px-50">
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#030014] backdrop-blur-md z-50 px-10 md:px-20 lg:px-50 ">
       <div className="w-full h-full flex flex-row items-center justify-between">
         {/* Toggle Button on the Left */}
         <button
@@ -37,28 +37,28 @@ const Navbar = () => {
           <a
             href="#home"
             className="cursor-pointer text-white hover:border-b-2"
-            onClick={closeSidebar} // Close sidebar when clicked
+            onClick={closeSidebar}
           >
             Home
           </a>
           <a
             href="#about-me"
             className="cursor-pointer text-white hover:border-b-2"
-            onClick={closeSidebar} // Close sidebar when clicked
+            onClick={closeSidebar}
           >
             About me
           </a>
           <a
             href="#academy"
             className="cursor-pointer text-white hover:border-b-2"
-            onClick={closeSidebar} // Close sidebar when clicked
+            onClick={closeSidebar}
           >
             Academy
           </a>
           <a
             href="#contact"
             className="cursor-pointer text-white hover:border-b-2"
-            onClick={closeSidebar} // Close sidebar when clicked
+            onClick={closeSidebar}
           >
             Contact
           </a>
@@ -66,18 +66,18 @@ const Navbar = () => {
 
         {isToggleActive && (
           <div
-            className={`fixed left-0 top-2 bg-white flex flex-col items-center p-12 ${
-              isToggleActive ? "w-full h-[1000px]" : "w-0"
-            } transition-all duration-300 ease-in-out md:hidden`}
+            className={`fixed left-0 top-0 bg-indigo-600 bg-opacity-25 flex flex-col items-center p-12 ${
+              isToggleActive ? "w-full h-[1000px] backdrop-blur-md" : "w-0"
+            } transition-all duration-300 ease-in-out md:hidden `}
           >
             {/* Cross Button */}
             <button
               onClick={closeSidebar}
-              className="absolute left-5 top-5 text-black cursor-pointer"
+              className="absolute left-9 top-2 text-white cursor-pointer rounded-full bg-[#030014] p-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-7 w-7 hover:scale-125"
+                className="h-8 w-8 hover:scale-125"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -91,38 +91,40 @@ const Navbar = () => {
               </svg>
             </button>
 
-            <a
-              href="#home"
-              className="cursor-pointer text-black text-lg mt-16 mb-4 hover:border-b-4 hover:scale-125"
-              style={{ fontSize: "1.5rem" }}
-              onClick={closeSidebar} // Close sidebar when clicked
-            >
-              Home
-            </a>
-            <a
-              href="#about-me"
-              className="cursor-pointer text-black text-lg mt-16 mb-4 hover:border-b-4 hover:scale-125"
-              style={{ fontSize: "1.5rem" }}
-              onClick={closeSidebar} // Close sidebar when clicked
-            >
-              About me
-            </a>
-            <a
-              href="#academy"
-              className="cursor-pointer text-black text-lg mt-16 mb-4 hover:border-b-4 hover:scale-125"
-              style={{ fontSize: "1.5rem" }}
-              onClick={closeSidebar} // Close sidebar when clicked
-            >
-              Academy
-            </a>
-            <a
-              href="#contact"
-              className="cursor-pointer text-black text-lg mt-16 mb-4 hover:border-b-4 hover:scale-125"
-              style={{ fontSize: "1.5rem" }}
-              onClick={closeSidebar} // Close sidebar when clicked
-            >
-              Contact
-            </a>
+            <div className="flex flex-col items-center justify-between gap-16 font-bold  mt-12 bg-indigo-700 backdrop-filter backdrop-blur-md bg-opacity-25 py-16 px-16 rounded z-0  ">
+              <a
+                href="#home"
+                className="cursor-pointer text-white text-lg mb-4 hover:border-b-4 hover:scale-125"
+                style={{ fontSize: "1.5rem" }}
+                onClick={closeSidebar}
+              >
+                Home
+              </a>
+              <a
+                href="#about-me"
+                className="cursor-pointer text-white text-lg mb-4 hover:border-b-4 hover:scale-125"
+                style={{ fontSize: "1.5rem" }}
+                onClick={closeSidebar}
+              >
+                About me
+              </a>
+              <a
+                href="#academy"
+                className="cursor-pointer text-white text-lg mb-4 hover:border-b-4 hover:scale-125"
+                style={{ fontSize: "1.5rem" }}
+                onClick={closeSidebar}
+              >
+                Academy
+              </a>
+              <a
+                href="#contact"
+                className="cursor-pointer text-white text-lg mb-4 hover:border-b-4 hover:scale-125"
+                style={{ fontSize: "1.5rem" }}
+                onClick={closeSidebar}
+              >
+                Contact
+              </a>
+            </div>
           </div>
         )}
 
