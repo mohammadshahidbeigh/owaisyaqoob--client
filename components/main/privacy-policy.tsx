@@ -16,7 +16,7 @@ const PrivacyPolicy: React.FC = () => {
       <h1 className="text-2xl font-bold mb-4">Privacy Policy</h1>
       <p>Effective date: {currentDate}</p>
       <p>
-        We at Lions Den Martial Arts Academy (&quot;we&quot;, &quot;our&quot;,
+        We at Martial Arts Club Academy (&quot;we&quot;, &quot;our&quot;,
         &quot;us&quot;) respect your privacy and are committed to protecting it
         through our compliance with this policy.
       </p>
