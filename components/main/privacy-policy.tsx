@@ -13,14 +13,14 @@ const PrivacyPolicy: React.FC = () => {
   const currentDate = formatDate(new Date());
   return (
     <div className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold mb-4">Privacy Policy</h1>
+      <h1 className="text-2xl font-bold mb-4">Privacy Policy</h1>
       <p>Effective date: {currentDate}</p>
       <p>
         We at Lions Den Martial Arts Academy (&quot;we&quot;, &quot;our&quot;,
         &quot;us&quot;) respect your privacy and are committed to protecting it
         through our compliance with this policy.
       </p>
-      <h2 className="text-2xl font-bold mt-4">Information We Collect</h2>
+      <h2 className="text-1xl font-bold mt-4">Information We Collect</h2>
       <p>
         We collect several types of information from and about users of our
         Website and members of our academy, including:
@@ -33,7 +33,7 @@ const PrivacyPolicy: React.FC = () => {
         <li>Medical and emergency contact information</li>
         <li>Usage data (how you use our services)</li>
       </ul>
-      <h2 className="text-2xl font-bold mt-4">How We Use Your Information</h2>
+      <h2 className="text-1xl font-bold mt-4">How We Use Your Information</h2>
       <p>We use the information we collect in the following ways:</p>
       <ul className="list-disc ml-8">
         <li>
@@ -48,18 +48,18 @@ const PrivacyPolicy: React.FC = () => {
         </li>
         <li>To ensure the safety and security of our members</li>
       </ul>
-      <h2 className="text-2xl font-bold mt-4">Sharing Your Information</h2>
+      <h2 className="text-1xl font-bold mt-4">Sharing Your Information</h2>
       <p>
         We do not share your personal information with third parties except to
         comply with the law, protect our rights, or as part of an agreement with
         service providers who help us run our operations.
       </p>
-      <h2 className="text-2xl font-bold mt-4">Your Rights</h2>
+      <h2 className="text-1xl font-bold mt-4">Your Rights</h2>
       <p>
         You have the right to access, update, or delete your personal
         information. You can do this by contacting us directly.
       </p>
-      <h2 className="text-2xl font-bold mt-4">Contact Us</h2>
+      <h2 className="text-1xl font-bold mt-4">Contact Us</h2>
       <p>
         If you have any questions about this Privacy Policy, please contact us:
       </p>
