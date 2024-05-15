@@ -84,7 +84,7 @@ const Contact = () => {
           Contact Us
         </h1>
         <div className="item font-bold text-white text-lg md:text-xl ml-3">
-          <h2>Mail:</h2>
+          <h2>Email:</h2>
           <span className="text-sm md:text-base">Owaisyaqoob534@gmail.com</span>
         </div>
         <div className="item font-bold text-white text-lg md:text-xl ml-3 ">
