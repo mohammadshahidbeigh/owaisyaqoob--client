@@ -66,8 +66,8 @@ const Navbar = () => {
 
         {isToggleActive && (
           <div
-            className={`fixed left-0 top-0 bg-white flex flex-col items-center p-12 ${
-              isToggleActive ? "w-96 h-[800px]" : "w-0"
+            className={`fixed left-0 top-2 bg-white flex flex-col items-center p-12 ${
+              isToggleActive ? "w-full h-[1000px]" : "w-0"
             } transition-all duration-300 ease-in-out md:hidden`}
           >
             {/* Cross Button */}

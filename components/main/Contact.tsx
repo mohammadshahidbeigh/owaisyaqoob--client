@@ -81,7 +81,7 @@ const Contact = () => {
         id="contact"
       >
         <h1 className="text-3xl md:text-6xl mb-4 ml-3 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-          Contact Me
+          Contact Us
         </h1>
         <div className="item font-bold text-white text-lg md:text-xl ml-3">
           <h2>Mail:</h2>
