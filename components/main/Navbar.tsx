@@ -91,11 +91,11 @@ const Navbar = () => {
               </svg>
             </button>
 
-            <div className="flex flex-col items-center justify-between gap-16 font-bold  mt-12 bg-[#030014]  py-16 px-16 rounded z-0  ">
+            <div className="flex flex-col items-center justify-between gap-12 font-bold  mt-12 bg-[#030014]  py-16 px-16 rounded-full  ">
               <a
                 href="#home"
                 className="cursor-pointer text-white text-lg mb-4 hover:border-b-4 hover:scale-125"
-                style={{ fontSize: "1.5rem" }}
+                style={{ fontSize: "1 rem" }}
                 onClick={closeSidebar}
               >
                 Home
@@ -103,7 +103,7 @@ const Navbar = () => {
               <a
                 href="#about-me"
                 className="cursor-pointer text-white text-lg mb-4 hover:border-b-4 hover:scale-125"
-                style={{ fontSize: "1.5rem" }}
+                style={{ fontSize: "1 rem" }}
                 onClick={closeSidebar}
               >
                 About me
@@ -111,7 +111,7 @@ const Navbar = () => {
               <a
                 href="#academy"
                 className="cursor-pointer text-white text-lg mb-4 hover:border-b-4 hover:scale-125"
-                style={{ fontSize: "1.5rem" }}
+                style={{ fontSize: "1 rem" }}
                 onClick={closeSidebar}
               >
                 Academy
@@ -119,7 +119,7 @@ const Navbar = () => {
               <a
                 href="#contact"
                 className="cursor-pointer text-white text-lg mb-4 hover:border-b-4 hover:scale-125"
-                style={{ fontSize: "1.5rem" }}
+                style={{ fontSize: "1 rem" }}
                 onClick={closeSidebar}
               >
                 Contact
