@@ -31,7 +31,7 @@ const ReturnPolicy: React.FC = () => {
         24 hours before the scheduled class. Late cancellations or no-shows are
         non-refundable.
       </p>
-      <h2 className="text-1xl font-bold mt-4">Merchandise</h2>
+      {/* <h2 className="text-1xl font-bold mt-4">Merchandise</h2>
       <p>
         Physical merchandise can be returned within 30 calendar days from the
         date of purchase. To be eligible for a return, the item must be unused
@@ -45,7 +45,7 @@ const ReturnPolicy: React.FC = () => {
         a refund to your original method of payment. You will receive the credit
         within a certain number of days, depending on your card issuer&apos;s
         policies.
-      </p>
+      </p> */}
       <h2 className="text-1xl font-bold mt-4">Contact Us</h2>
       <p>
         If you have any questions about our Returns and Refunds Policy, please
