@@ -15,51 +15,45 @@ const PrivacyPolicy: React.FC = () => {
     <div className="container mx-auto p-8">
       <h1 className="text-2xl font-bold mb-4">Privacy Policy</h1>
       <p>Effective date: {currentDate}</p>
+      <h2 className="text-xl font-bold mt-4">Introduction</h2>
       <p>
-        We at Lions Den Martial Arts Academy (&quot;we&quot;, &quot;our&quot;,
-        &quot;us&quot;) respect your privacy and are committed to protecting it
-        through our compliance with this policy.
+        This Privacy Policy explains how Lions Den Martial Arts Academy
+        collects, uses, and discloses your personal information.
       </p>
-      <h2 className="text-1xl font-bold mt-4">Information We Collect</h2>
+      <h2 className="text-xl font-bold mt-4"> Information We Collect</h2>
       <p>
-        We collect several types of information from and about users of our
-        Website and members of our academy, including:
+        We collect information that you provide to us directly, such as when you
+        create an account, book a class, or contact us for support. This
+        information may include your name, email address, phone number, and
+        payment details.
       </p>
-      <ul className="list-disc ml-8">
-        <li>
-          Personal identification information (Name, email address, phone
-          number, etc.)
-        </li>
-        <li>Medical and emergency contact information</li>
-        <li>Usage data (how you use our services)</li>
-      </ul>
-      <h2 className="text-1xl font-bold mt-4">How We Use Your Information</h2>
-      <p>We use the information we collect in the following ways:</p>
-      <ul className="list-disc ml-8">
-        <li>
-          To provide and maintain our services, including scheduling classes and
-          training sessions
-        </li>
-        <li>To notify you about changes to our services</li>
-        <li>To provide customer support</li>
-        <li>
-          To gather analysis or valuable information so that we can improve our
-          services
-        </li>
-        <li>To ensure the safety and security of our members</li>
-      </ul>
-      <h2 className="text-1xl font-bold mt-4">Sharing Your Information</h2>
+      <h2 className="text-xl font-bold mt-4"> How We Use Your Information</h2>
       <p>
-        We do not share your personal information with third parties except to
-        comply with the law, protect our rights, or as part of an agreement with
-        service providers who help us run our operations.
+        We use the information we collect to provide, maintain, and improve our
+        services, process transactions, and communicate with you. We may also
+        use your information to send you promotional messages and updates.
       </p>
-      <h2 className="text-1xl font-bold mt-4">Your Rights</h2>
+
+      <h2 className="text-xl font-bold mt-4">Sharing Your Information</h2>
       <p>
-        You have the right to access, update, or delete your personal
-        information. You can do this by contacting us directly.
+        We do not share your personal information with third parties except as
+        necessary to provide our services, comply with legal obligations, or
+        protect our rights.
       </p>
-      <h2 className="text-1xl font-bold mt-4">Contact Us</h2>
+
+      <h2 className="text-xl font-bold mt-4"> Security</h2>
+      <p>
+        We implement reasonable security measures to protect your personal
+        information from unauthorized access and disclosure.
+      </p>
+
+      <h2 className="text-xl font-bold mt-4"> Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. We will notify you
+        of any changes by posting the new policy on our website.
+      </p>
+
+      <h2 className="text-xl font-bold mt-4"> Contact Us</h2>
       <p>
         If you have any questions about this Privacy Policy, please contact us:
       </p>
