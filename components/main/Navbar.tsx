@@ -66,7 +66,7 @@ const Navbar = () => {
 
         {isToggleActive && (
           <div
-            className={`fixed left-0 top-0 bg-indigo-600 bg-opacity-25 flex flex-col items-center p-12 ${
+            className={`fixed left-0 top-0 bg-indigo-600 bg-opacity-25 flex flex-col items-center p-10 ${
               isToggleActive ? "w-full h-[1000px] backdrop-blur-md" : "w-0"
             } transition-all duration-300 ease-in-out md:hidden `}
           >

@@ -5,11 +5,11 @@ const Projects = () => {
   return (
     <div className="relative">
       <div
-        className="flex flex-col items-center justify-center py-20 sticky top-0 ml-3 "
+        className="flex flex-col items-center justify-center  py-16 md:py-16 sticky top-0 ml-3 "
         id="academy"
         style={{ background: "#030014" }}
       >
-        <h1 className="text-2xl md:text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 border-b-8 border-purple-500">
+        <h1 className="text-xl md:text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 border-b-8 border-purple-500">
           Lions Den Martial Arts Academy
         </h1>
       </div>

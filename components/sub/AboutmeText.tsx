@@ -23,7 +23,7 @@ const AcademyCard = ({ title, description }: Props) => {
       </div>
       <div className="w-full relative z-10">
         <div className="w-full h-full p-12 bg-opacity-75 rounded-lg">
-          <h1 className="mt-4 text-5xl font-serif text-white w-auto h-auto">
+          <h1 className="mt-4 text-2xl md:text-5xl font-serif text-white">
             {title}
           </h1>
           <p className="mt-8 text-lg text-gray-300 leading-relaxed">

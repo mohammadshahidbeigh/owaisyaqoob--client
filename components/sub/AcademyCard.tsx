@@ -21,7 +21,7 @@ const AcademyCard = ({ src, title, description, pricing }: Props) => {
         />
       </div>
       <div className="w-full md:w-1/2 p-4">
-        <h1 className="text-4xl md:text-6xl font-semibold text-white">
+        <h1 className="text-2xl md:text-6xl font-semibold text-white">
           {title}
         </h1>
         <p className="mt-4 md:mt-8 text-gray-300">{description}</p>

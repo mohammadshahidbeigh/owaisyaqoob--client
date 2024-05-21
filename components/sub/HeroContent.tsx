@@ -25,7 +25,7 @@ const HeroContent = () => {
           className="Welcome-box py-[8px] px-[7px]"
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          <h2 className="text-transparent bg-clip-text text-3xl font-bold max-w-[500px] w-auto h-auto bg-gradient-to-r from-purple-500 to-cyan-500">
+          <h2 className="text-transparent bg-clip-text text-xl md:text-3xl font-bold max-w-[500px] w-auto h-auto bg-gradient-to-r from-purple-500 to-cyan-500">
             {" "}
             OWAIS YAQOOB{" "}
           </h2>
@@ -47,7 +47,7 @@ const HeroContent = () => {
 
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-lg md:text-xl text-gray-400 max-w-[600px]"
+          className="text-base md:text-xl text-gray-400 max-w-[600px]"
         >
           I&apos;m a professional Mixed Martial Artist with a passion for
           fitness and training. Explore my journey in the world of martial arts
@@ -56,7 +56,7 @@ const HeroContent = () => {
         <motion.a
           variants={slideInFromLeft(1)}
           href="#about-me"
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px] mb-10 z-0"
+          className="py-1 md:py-2 button-primary text-center text-white text-sm md:text-base cursor-pointer rounded-lg max-w-[100px] md:max-w-[200px] z-0"
         >
           Learn More!
         </motion.a>
@@ -79,7 +79,7 @@ const HeroContent = () => {
         {/* Text */}
         <motion.div
           style={{ fontSize: "16vw" }} // Adjust the value to your desired size
-          className="absolute bottom-[-10%] whitespace-nowrap text-white text-opacity-5 font-bold z-[-1]"
+          className="absolute bottom-[-15%] whitespace-nowrap text-white text-opacity-5 font-bold z-[-1]"
           initial="initial"
           animate="animate"
           variants={sliderVariants(0)}
