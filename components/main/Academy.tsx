@@ -5,7 +5,7 @@ const Projects = () => {
   return (
     <div className="relative">
       <div
-        className="flex flex-col items-center justify-center  py-20 sticky top-0 ml-3 "
+        className="flex flex-col items-center justify-center  py-20 sticky top-0 "
         id="academy"
         style={{ background: "#030014" }}
       >
