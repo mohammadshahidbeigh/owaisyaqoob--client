@@ -70,7 +70,7 @@ const Contact = () => {
   return (
     <motion.form
       ref={formRef}
-      className="contact flex flex-col md:flex-row items-center m-auto px-5"
+      className="contact flex flex-col md:flex-row items-center m-auto px-5 py-20"
       variants={variants}
       initial="initial"
       whileInView="animate"
