@@ -26,8 +26,8 @@ const Navbar = () => {
           <Image
             src="/menu.png"
             alt="logo"
-            width={40}
-            height={40}
+            width={35}
+            height={35}
             className="cursor-pointer hover:scale-110"
           />
         </button>
