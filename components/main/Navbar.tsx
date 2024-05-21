@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Socials } from "@/constants";
 import Image from "next/image";
+import { FiHome, FiUser, FiBook, FiMail } from "react-icons/fi";
 
 const Navbar = () => {
   const [isToggleActive, setIsToggleActive] = useState(false);
@@ -16,65 +17,21 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#030014] backdrop-blur-md z-50 px-10 md:px-20 lg:px-50 ">
-      <div className="w-full h-full flex flex-row items-center justify-between">
-        {/* Toggle Button on the Left */}
-        <button
-          onClick={toggleButtonClick}
-          className="text-white h-auto w-auto flex flex-row items-center md:hidden"
-        >
-          <Image
-            src="/menu.png"
-            alt="logo"
-            width={35}
-            height={35}
-            className="cursor-pointer hover:scale-110"
-          />
-        </button>
+    <div className="w-full h-[65px] font-bold fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#030014] z-50 px-4 md:px-8 lg:px-12 flex items-center justify-between">
+      <button onClick={toggleButtonClick} className="text-white md:hidden">
+        <Image
+          src="/menu.png"
+          alt="menu icon"
+          width={35}
+          height={35}
+          className="cursor-pointer hover:scale-110"
+        />
+      </button>
 
-        {/* Rest of the Navbar */}
-        <div className="hidden md:flex flex-row items-center justify-between font-bold w-full max-w-screen-lg mx-auto gap-5">
-          <a
-            href="#home"
-            className="cursor-pointer text-white hover:border-b-2"
-            onClick={closeSidebar}
-          >
-            Home
-          </a>
-          <a
-            href="#about-me"
-            className="cursor-pointer text-white hover:border-b-2"
-            onClick={closeSidebar}
-          >
-            About me
-          </a>
-          <a
-            href="#academy"
-            className="cursor-pointer text-white hover:border-b-2"
-            onClick={closeSidebar}
-          >
-            Academy
-          </a>
-          <a
-            href="#contact"
-            className="cursor-pointer text-white hover:border-b-2"
-            onClick={closeSidebar}
-          >
-            Contact
-          </a>
-        </div>
-
-        {isToggleActive && (
-          <div
-            className={`fixed left-0 top-0 bg-indigo-600 bg-opacity-25 flex flex-col items-center p-10 ${
-              isToggleActive ? "w-full h-[1000px] backdrop-blur-md" : "w-0"
-            } transition-all duration-300 ease-in-out md:hidden `}
-          >
-            {/* Cross Button */}
-            <button
-              onClick={closeSidebar}
-              className="absolute left-9 top-2 text-white cursor-pointer rounded-full bg-[#030014] p-2"
-            >
+      {isToggleActive && (
+        <div className="fixed inset-0 z-40 flex">
+          <div className="bg-[#030014] w-64 h-full shadow-lg flex flex-col p-6 space-y-4">
+            <button onClick={closeSidebar} className="text-white mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-8 w-8 hover:scale-125"
@@ -90,62 +47,67 @@ const Navbar = () => {
                 />
               </svg>
             </button>
-
-            <div className="flex flex-col items-center justify-between gap-12 font-bold  mt-12 bg-[#030014]  py-16 px-16 rounded-full  ">
+            <nav className="flex flex-col space-y-4">
               <a
                 href="#home"
-                className="cursor-pointer text-white text-lg mb-4 hover:border-b-4 hover:scale-125"
-                style={{ fontSize: "1 rem" }}
-                onClick={closeSidebar}
+                className="flex items-center p-4 text-white hover:bg-gray-700 rounded-lg"
               >
-                Home
+                <FiHome className="mr-2" /> Home
               </a>
               <a
                 href="#about-me"
-                className="cursor-pointer text-white text-lg mb-4 hover:border-b-4 hover:scale-125"
-                style={{ fontSize: "1 rem" }}
-                onClick={closeSidebar}
+                className="flex items-center p-4 text-white hover:bg-gray-700 rounded-lg"
               >
-                About me
+                <FiUser className="mr-2" /> About me
               </a>
               <a
                 href="#academy"
-                className="cursor-pointer text-white text-lg mb-4 hover:border-b-4 hover:scale-125"
-                style={{ fontSize: "1 rem" }}
-                onClick={closeSidebar}
+                className="flex items-center p-4 text-white hover:bg-gray-700 rounded-lg"
               >
-                Academy
+                <FiBook className="mr-2" /> Academy
               </a>
               <a
                 href="#contact"
-                className="cursor-pointer text-white text-lg mb-4 hover:border-b-4 hover:scale-125"
-                style={{ fontSize: "1 rem" }}
-                onClick={closeSidebar}
+                className="flex items-center p-4 text-white hover:bg-gray-700 rounded-lg"
               >
-                Contact
+                <FiMail className="mr-2" /> Contact
               </a>
-            </div>
+            </nav>
           </div>
-        )}
-
-        <div className="flex flex-row gap-5 items-center">
-          {Socials.map((social) => (
-            <a
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={social.name}
-              className={`cursor-pointer ${social.name} hover:scale-125`}
-            >
-              <Image
-                src={social.src}
-                alt={social.name}
-                width={28}
-                height={28}
-              />
-            </a>
-          ))}
+          <div
+            className="flex-1 bg-black bg-opacity-50"
+            onClick={closeSidebar}
+          ></div>
         </div>
+      )}
+
+      <div className="hidden md:flex items-center space-x-6">
+        <a href="#home" className="text-white hover:underline">
+          Home
+        </a>
+        <a href="#about-me" className="text-white hover:underline">
+          About me
+        </a>
+        <a href="#academy" className="text-white hover:underline">
+          Academy
+        </a>
+        <a href="#contact" className="text-white hover:underline">
+          Contact
+        </a>
+      </div>
+
+      <div className="flex items-center space-x-4">
+        {Socials.map((social) => (
+          <a
+            href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            key={social.name}
+            className="text-white hover:scale-125"
+          >
+            <Image src={social.src} alt={social.name} width={28} height={28} />
+          </a>
+        ))}
       </div>
     </div>
   );
