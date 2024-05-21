@@ -1,7 +1,8 @@
 import React from "react";
 import AcademyCard from "../sub/AboutmeText";
+import ImageCard from "../sub/ImageCard"; // Import your ImageCard component
 
-const Projects = () => {
+const Projects: React.FC = () => {
   return (
     <div
       className="flex flex-col items-center justify-center py-20 "
@@ -25,6 +26,35 @@ const Projects = () => {
           title="Road to the UFC: The Ultimate Destination"
           description="As I recount this journey, it underscores my unwavering dedication to mastering the multifaceted world of martial arts. With each challenge embraced and every milestone achieved, I am fueled by the passion to continue pushing my limits. With my eyes set on the future, the ultimate destination looms large – the road to the Ultimate Fighting Championship. Excitement courses through my veins as I anticipate the challenges and triumphs that lie ahead, eager to etch my name in the annals of the UFC and achieve new heights in the dynamic world of Mixed Martial Arts."
         />
+      </div>
+
+      <div className="h-full w-full flex flex-col items-center py-10">
+        <h2 className="text-2xl md:text-4xl font-serif text-white mb-6">
+          Moments with Champions
+        </h2>
+        <div className="w-full flex flex-wrap justify-center gap-10 px-10">
+          <ImageCard
+            src="/gymF1.jpg"
+            alt="Image with UFC fighter 1"
+            description="With Pound4Pound NO.1 World Champion Islam Makhachev"
+          />
+          <ImageCard
+            src="/gymF5.jpg"
+            alt="Image with UFC fighter 2"
+            description="With World Champion Khabib Nurmagomedov"
+          />
+          <ImageCard
+            src="/gymF6.jpg"
+            alt="Image with UFC fighter 3"
+            description="With  Bellator Lightweight Champion Usman Nurmagomedov "
+          />
+          <ImageCard
+            src="/gymF3.jpg"
+            alt="Image with UFC fighter 4"
+            description="With World Champion Khabib's  UFC Belt"
+          />
+          {/* Add more ImageCard components as needed */}
+        </div>
       </div>
     </div>
   );
