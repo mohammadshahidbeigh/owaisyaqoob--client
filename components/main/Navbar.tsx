@@ -140,8 +140,8 @@ const Navbar = () => {
               <Image
                 src={social.src}
                 alt={social.name}
-                width={20}
-                height={20}
+                width={28}
+                height={28}
               />
             </a>
           ))}
