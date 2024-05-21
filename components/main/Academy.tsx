@@ -61,7 +61,7 @@ const Projects = () => {
           src="/gymicons.png"
           title="Weight or Fat-Cut Program"
           description="Explore our customized programs designed to help you achieve your weight or fat-cutting goals. Tailored nutrition plans and targeted workout routines will assist you on your journey to a healthier and more active lifestyle. Contact us for personalized pricing details."
-          pricing="Contact for Pricing"
+          pricing="Pricing: ₹2,000"
         />
       </div>
     </div>
