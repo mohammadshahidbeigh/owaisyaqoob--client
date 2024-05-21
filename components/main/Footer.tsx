@@ -80,10 +80,12 @@ const Footer: React.FC = () => {
             <div className="font-bold text-[16px]">About</div>
             <p className="flex flex-row items-center my-[15px] cursor-pointer">
               <a
-                href="mailto:Owaisyaqoob534@gmail.com"
+                href="https://wa.me/919797555443?text=Hi%20Lions%20Den%20Martial%20Arts%20Academy,%20I%20am%20interested%20in%20joining."
                 className="text-[15px] ml-[6px] transition-colors duration-300 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Become Sponsor
+                Join Us
               </a>
             </p>
             <p className="flex flex-row items-center my-[15px] cursor-pointer">
