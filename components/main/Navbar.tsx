@@ -30,7 +30,7 @@ const Navbar = () => {
 
       {isToggleActive && (
         <div className="fixed inset-0 z-40 flex">
-          <div className="bg-[#030014] w-64 h-full shadow-lg flex flex-col p-6 space-y-4">
+          <div className="bg-[#030014] w-60 h-full shadow-lg flex flex-col p-6 space-y-12">
             <button onClick={closeSidebar} className="text-white mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -50,25 +50,25 @@ const Navbar = () => {
             <nav className="flex flex-col space-y-4">
               <a
                 href="#home"
-                className="flex items-center p-4 text-white hover:bg-gray-700 rounded-lg"
+                className="flex items-center p-6 text-white hover:bg-gray-700 rounded-lg"
               >
                 <FiHome className="mr-2" /> Home
               </a>
               <a
                 href="#about-me"
-                className="flex items-center p-4 text-white hover:bg-gray-700 rounded-lg"
+                className="flex items-center p-6 text-white hover:bg-gray-700 rounded-lg"
               >
                 <FiUser className="mr-2" /> About me
               </a>
               <a
                 href="#academy"
-                className="flex items-center p-4 text-white hover:bg-gray-700 rounded-lg"
+                className="flex items-center p-6 text-white hover:bg-gray-700 rounded-lg"
               >
                 <FiBook className="mr-2" /> Academy
               </a>
               <a
                 href="#contact"
-                className="flex items-center p-4 text-white hover:bg-gray-700 rounded-lg"
+                className="flex items-center p-6 text-white hover:bg-gray-700 rounded-lg"
               >
                 <FiMail className="mr-2" /> Contact
               </a>
