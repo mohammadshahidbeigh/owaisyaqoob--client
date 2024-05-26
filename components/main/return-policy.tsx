@@ -17,8 +17,7 @@ const ReturnPolicy: React.FC = () => {
       <p>Effective date: {currentDate}</p>
       <p>
         Thank you for joining Lions Den Martial Arts Academy. If you are not
-        entirely satisfied with our services or products, we&apos;re here to
-        help.
+        entirely satisfied with our services, we&apos;re here to help.
       </p>
       <h2 className="text-1xl font-bold mt-4">Membership Fees</h2>
       <p>
