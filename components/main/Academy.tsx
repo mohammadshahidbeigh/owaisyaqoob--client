@@ -3,6 +3,7 @@
 
 import React, { useState } from "react";
 import AcademyCard from "../sub/AcademyCard";
+import Modal from "../main/Modal"; // Import the Modal component
 
 type DescriptionKeys =
   | "For Beginners"
@@ -14,10 +15,27 @@ type DescriptionKeys =
   | "Training with Head Coach"
   | "Weight or Fat-Cut Program";
 
+type Customer = {
+  name: string;
+  email: string;
+  contact: string;
+};
+
 const Projects = () => {
   const [expandedCard, setExpandedCard] = useState<DescriptionKeys | null>(
     null
   );
+
+  const [customer, setCustomer] = useState<Customer>({
+    name: "",
+    email: "",
+    contact: "",
+  });
+
+  const [selectedTitle, setSelectedTitle] = useState<DescriptionKeys | null>(
+    null
+  );
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleToggleExpand = (title: DescriptionKeys) => {
     setExpandedCard(expandedCard === title ? null : title);
@@ -53,13 +71,12 @@ const Projects = () => {
     "Weight or Fat-Cut Program": 2000,
   };
 
-  const handlePayment = async (title: DescriptionKeys) => {
+  const handlePayment = async (title: DescriptionKeys, customer: Customer) => {
     try {
       console.log("Starting payment process for:", title);
 
-      // Use the numeric value directly
       const amountInRupees = pricing[title];
-      const amountInPaise = amountInRupees;
+      const amountInPaise = amountInRupees; // Convert to paise
       console.log(
         `Amount in Rupees: ${amountInRupees}, Amount in Paise: ${amountInPaise}`
       );
@@ -95,13 +112,12 @@ const Projects = () => {
           );
         },
         prefill: {
-          name: "Mohammad Shahid Beigh",
-          email: "mohammadshahidbeigh@gmail.com",
-          contact: "6006684827",
+          name: customer.name,
+          email: customer.email,
+          contact: customer.contact,
         },
         notes: {
-          address:
-            "Lions Den Martial Arts Academy, Near Shaheed Park, Opposite Alamdar Masjid 3rd Floor Dangerpora, Pulwama",
+          address: "Corporate Office",
         },
         theme: {
           color: "#3399cc",
@@ -112,6 +128,27 @@ const Projects = () => {
       rzp1.open();
     } catch (error) {
       console.error("Error during payment", error);
+    }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setCustomer((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handlePaymentClick = (title: DescriptionKeys) => {
+    setSelectedTitle(title);
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleModalSubmit = () => {
+    if (selectedTitle) {
+      handlePayment(selectedTitle, customer);
+      setIsModalOpen(false);
     }
   };
 
@@ -127,9 +164,44 @@ const Projects = () => {
         </h1>
       </div>
 
-      <div className="h-half w-half flex flex-col md:flex-col gap-10 px-10 py-20">
+      <Modal isOpen={isModalOpen} onClose={handleModalClose}>
+        <div className="flex flex-col gap-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={customer.name}
+            onChange={handleInputChange}
+            className="mt-12 p-2 border rounded"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={customer.email}
+            onChange={handleInputChange}
+            className="p-2 border rounded"
+          />
+          <input
+            type="text"
+            name="contact"
+            placeholder="Contact"
+            value={customer.contact}
+            onChange={handleInputChange}
+            className="p-2 border rounded"
+          />
+          <button
+            onClick={handleModalSubmit}
+            className="mt-4 bg-purple-500 text-white py-2 px-4 rounded"
+          >
+            Proceed to Payment
+          </button>
+        </div>
+      </Modal>
+
+      <div className="h-half w-full flex flex-col gap-10 px-10 py-20">
         {Object.keys(descriptions).map((title) => (
-          <div key={title} className="p-0 rounded-lg ">
+          <div key={title} className="p-0 rounded-lg">
             <AcademyCard
               src="/gymicons.png"
               title={title as DescriptionKeys}
@@ -139,7 +211,7 @@ const Projects = () => {
                 handleToggleExpand(title as DescriptionKeys)
               }
               isExpanded={expandedCard === title}
-              onPayment={() => handlePayment(title as DescriptionKeys)}
+              onPayment={() => handlePaymentClick(title as DescriptionKeys)}
             />
           </div>
         ))}
