@@ -86,7 +86,7 @@ const Projects = () => {
         key: "rzp_live_vdK7EWhohq7pdQ",
         amount: orderData.amount,
         currency: "INR",
-        name: "Academy",
+        name: "Lions Den Martial Arts Academy",
         description: `Payment for ${title}`,
         order_id: orderData.id,
         handler: function (response: any) {
@@ -100,7 +100,8 @@ const Projects = () => {
           contact: "6006684827",
         },
         notes: {
-          address: "Corporate Office",
+          address:
+            "Lions Den Martial Arts Academy, Near Shaheed Park, Opposite Alamdar Masjid 3rd Floor Dangerpora, Pulwama",
         },
         theme: {
           color: "#3399cc",
