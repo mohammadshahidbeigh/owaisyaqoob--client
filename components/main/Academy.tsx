@@ -1,9 +1,9 @@
+// components/main/Projects.tsx
 "use client";
 
 import React, { useState } from "react";
 import AcademyCard from "../sub/AcademyCard";
 
-// Define a type for the descriptions object
 type DescriptionKeys =
   | "For Beginners"
   | "Two Days a Week"
@@ -42,15 +42,76 @@ const Projects = () => {
       "Explore our customized programs designed to help you achieve your weight or fat-cutting goals. Tailored nutrition plans and targeted workout routines will assist you on your journey to a healthier and more active lifestyle. Custom nutrition and workout plans aimed at helping you achieve your weight or fat-cutting goals. Includes dietary guidance and tailored exercises. Our comprehensive approach includes meal planning, regular progress tracking, and motivational support to help you achieve sustainable results. The program is designed to fit your lifestyle and preferences, ensuring that you can maintain your new habits long-term. Participants will receive personalized coaching on proper nutrition, portion control, and effective workout techniques. Regular check-ins and adjustments ensure that your plan evolves with your progress, keeping you on track to meet your goals.",
   };
 
-  const pricing: Record<DescriptionKeys, string> = {
-    "For Beginners": "₹1,000",
-    "Two Days a Week": "₹1,200",
-    "3-Month Crash Course": "₹10,000",
-    "Aspiring Fighters": "₹1,500",
-    "Personal Training": "₹2,000",
-    "Fitness & Self-Defense": "₹1,000",
-    "Training with Head Coach": "₹2,500",
-    "Weight or Fat-Cut Program": "₹2,000",
+  const pricing: Record<DescriptionKeys, number> = {
+    "For Beginners": 1,
+    "Two Days a Week": 1200,
+    "3-Month Crash Course": 10000,
+    "Aspiring Fighters": 1500,
+    "Personal Training": 2000,
+    "Fitness & Self-Defense": 1000,
+    "Training with Head Coach": 2500,
+    "Weight or Fat-Cut Program": 2000,
+  };
+
+  const handlePayment = async (title: DescriptionKeys) => {
+    try {
+      console.log("Starting payment process for:", title);
+
+      // Use the numeric value directly
+      const amountInRupees = pricing[title];
+      const amountInPaise = amountInRupees;
+      console.log(
+        `Amount in Rupees: ${amountInRupees}, Amount in Paise: ${amountInPaise}`
+      );
+
+      const response = await fetch("/api/create-order", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          amount: amountInPaise,
+        }), // Amount in paise
+      });
+
+      if (!response.ok) {
+        console.error("Failed to create order", await response.text());
+        return;
+      }
+
+      const orderData = await response.json();
+      console.log("Order data received:", orderData);
+
+      const options = {
+        key: "rzp_live_vdK7EWhohq7pdQ",
+        amount: orderData.amount,
+        currency: "INR",
+        name: "Academy",
+        description: `Payment for ${title}`,
+        order_id: orderData.id,
+        handler: function (response: any) {
+          alert(
+            `Payment successful! Payment ID: ${response.razorpay_payment_id}`
+          );
+        },
+        prefill: {
+          name: "Mohammad Shahid Beigh",
+          email: "mohammadshahidbeigh@gmail.com",
+          contact: "6006684827",
+        },
+        notes: {
+          address: "Corporate Office",
+        },
+        theme: {
+          color: "#3399cc",
+        },
+      };
+
+      const rzp1 = new (window as any).Razorpay(options);
+      rzp1.open();
+    } catch (error) {
+      console.error("Error during payment", error);
+    }
   };
 
   return (
@@ -70,13 +131,14 @@ const Projects = () => {
           <div key={title} className="p-0 rounded-lg ">
             <AcademyCard
               src="/gymicons.png"
-              title={title}
+              title={title as DescriptionKeys}
               description={descriptions[title as DescriptionKeys]}
-              pricing={`Pricing: ${pricing[title as DescriptionKeys]}`}
+              pricing={pricing[title as DescriptionKeys]}
               onToggleExpand={() =>
                 handleToggleExpand(title as DescriptionKeys)
               }
               isExpanded={expandedCard === title}
+              onPayment={() => handlePayment(title as DescriptionKeys)}
             />
           </div>
         ))}

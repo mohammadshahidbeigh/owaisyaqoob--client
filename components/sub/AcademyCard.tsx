@@ -1,3 +1,4 @@
+// components/sub/AcademyCard.tsx
 import Image from "next/image";
 import React from "react";
 
@@ -5,9 +6,10 @@ interface Props {
   src: string;
   title: string;
   description: string;
-  pricing: string;
+  pricing: number;
   onToggleExpand: () => void;
   isExpanded: boolean;
+  onPayment: () => void;
 }
 
 const AcademyCard = ({
@@ -17,6 +19,7 @@ const AcademyCard = ({
   pricing,
   onToggleExpand,
   isExpanded,
+  onPayment,
 }: Props) => {
   return (
     <div className="flex flex-col md:flex-row items-center gap-6 overflow-hidden rounded-lg shadow-lg bg-[#030014] p-0">
@@ -39,8 +42,11 @@ const AcademyCard = ({
             {isExpanded ? "Show Less" : "Learn More"}
           </button>
         </p>
-        <button className="mt-4 bg-purple-500 text-white py-2 px-4 rounded">
-          {pricing}
+        <button
+          onClick={onPayment}
+          className="mt-4 bg-purple-500 text-white py-2 px-4 rounded"
+        >
+          {`Pricing: ₹${pricing}`}
         </button>
       </div>
     </div>
