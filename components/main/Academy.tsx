@@ -1,6 +1,3 @@
-// components/main/Projects.tsx
-"use client";
-
 import React, { useState } from "react";
 import AcademyCard from "../sub/AcademyCard";
 import Modal from "../main/Modal"; // Import the Modal component
@@ -19,23 +16,25 @@ type Customer = {
   name: string;
   email: string;
   contact: string;
+  password: string;
 };
 
 const Projects = () => {
   const [expandedCard, setExpandedCard] = useState<DescriptionKeys | null>(
     null
   );
-
   const [customer, setCustomer] = useState<Customer>({
     name: "",
     email: "",
     contact: "",
+    password: "",
   });
-
   const [selectedTitle, setSelectedTitle] = useState<DescriptionKeys | null>(
     null
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
 
   const handleToggleExpand = (title: DescriptionKeys) => {
     setExpandedCard(expandedCard === title ? null : title);
@@ -72,23 +71,20 @@ const Projects = () => {
   };
 
   const handlePayment = async (title: DescriptionKeys, customer: Customer) => {
+    if (!isLoggedIn) {
+      setIsSignInModalOpen(true);
+      return;
+    }
     try {
-      console.log("Starting payment process for:", title);
-
       const amountInRupees = pricing[title];
-      const amountInPaise = amountInRupees; // Convert to paise
-      console.log(
-        `Amount in Rupees: ${amountInRupees}, Amount in Paise: ${amountInPaise}`
-      );
+      const amountInPaise = amountInRupees * 100; // Convert to paise
 
       const response = await fetch("/api/create-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          amount: amountInPaise,
-        }), // Amount in paise
+        body: JSON.stringify({ amount: amountInPaise }),
       });
 
       if (!response.ok) {
@@ -97,8 +93,6 @@ const Projects = () => {
       }
 
       const orderData = await response.json();
-      console.log("Order data received:", orderData);
-
       const options = {
         key: "rzp_live_vdK7EWhohq7pdQ",
         amount: orderData.amount,
@@ -145,11 +139,36 @@ const Projects = () => {
     setIsModalOpen(false);
   };
 
-  const handleModalSubmit = () => {
+  const handleModalSubmit = async () => {
     if (selectedTitle) {
-      handlePayment(selectedTitle, customer);
+      // Handle registration logic here
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(customer),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setIsLoggedIn(true);
+        handlePayment(selectedTitle, customer);
+      } else {
+        alert("Registration failed. Please try again.");
+      }
       setIsModalOpen(false);
     }
+  };
+
+  const handleSignInModalClose = () => {
+    setIsSignInModalOpen(false);
+  };
+
+  const handleSignInSubmit = () => {
+    // Handle sign-in logic here
+    setIsLoggedIn(true);
+    setIsSignInModalOpen(false);
   };
 
   return (
@@ -165,37 +184,126 @@ const Projects = () => {
       </div>
 
       <Modal isOpen={isModalOpen} onClose={handleModalClose}>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col items-center gap-4 p-8 bg-white rounded-lg shadow-lg w-full ">
+          <h2 className="text-2xl font-semibold">Create a new account</h2>
+          <p className="text-gray-600">Enter your details to register.</p>
           <input
             type="text"
             name="name"
-            placeholder="Name"
+            placeholder="Full Name"
             value={customer.name}
             onChange={handleInputChange}
-            className="mt-12 p-2 border rounded"
+            className="mt-4 p-4 border rounded w-full"
           />
           <input
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder="Email Address"
             value={customer.email}
             onChange={handleInputChange}
-            className="p-2 border rounded"
+            className="p-4 border rounded w-full"
           />
           <input
-            type="text"
-            name="contact"
-            placeholder="Contact"
-            value={customer.contact}
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={customer.password}
             onChange={handleInputChange}
-            className="p-2 border rounded"
+            className="p-4 border rounded w-full"
           />
+          <div className="text-sm">
+            <a
+              href="#"
+              className="font-semibold text-blue-600 hover:text-indigo-500"
+            >
+              Forgot password?
+            </a>
+          </div>
           <button
             onClick={handleModalSubmit}
-            className="mt-4 bg-purple-500 text-white py-2 px-4 rounded"
+            className="mt-4 bg-blue-600 text-white py-2 px-4 rounded w-full"
           >
-            Proceed to Payment
+            Register
           </button>
+          <p className="mt-4 text-gray-500 text-sm">
+            Already a member?{" "}
+            <a
+              href="#"
+              className="text-blue-600 underline"
+              onClick={() => {
+                setIsModalOpen(false);
+                setIsSignInModalOpen(true);
+              }}
+            >
+              Click to Login
+            </a>
+          </p>
+        </div>
+      </Modal>
+
+      <Modal isOpen={isSignInModalOpen} onClose={handleSignInModalClose}>
+        <div className="flex flex-col items-center gap-4 p-8 bg-white rounded-lg shadow-lg w-full max-w-md mx-auto">
+          <h2 className="text-2xl font-semibold">Sign in to your account</h2>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email address"
+            value={customer.email}
+            onChange={handleInputChange}
+            className="mt-4 p-4 border rounded w-full"
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={customer.password}
+            onChange={handleInputChange}
+            className="mt-4 p-4 border rounded w-full"
+          />
+          <div className="flex items-center justify-between w-full">
+            <label className="flex items-center">
+              <input type="checkbox" className="mr-2" />
+              Remember me
+            </label>
+            <a
+              href="#"
+              className="text-blue-600 font-semibold hover:text-indigo-500"
+            >
+              Forgot password?
+            </a>
+          </div>
+          <button
+            onClick={handleSignInSubmit}
+            className="mt-4 bg-blue-600 text-white py-2 px-4 rounded w-full"
+          >
+            Sign in
+          </button>
+          <p className="mt-4 text-gray-500 text-sm">Or continue with</p>
+          <div className="flex justify-around w-full mt-2">
+            <button className="bg-white border rounded px-4 py-2 flex items-center">
+              <img
+                src="/path-to-google-logo.png"
+                alt="Google"
+                className="w-6 h-6 mr-2"
+              />
+              Google
+            </button>
+            <button className="bg-white border rounded px-4 py-2 flex items-center">
+              <img
+                src="/path-to-github-logo.png"
+                alt="GitHub"
+                className="w-6 h-6 mr-2"
+              />
+              GitHub
+            </button>
+          </div>
+          <p className="mt-4 text-gray-500 text-sm">
+            Not a member?{" "}
+            <a href="#" className="text-blue-600 underline">
+              Start a 14 day free trial
+            </a>
+            .
+          </p>
         </div>
       </Modal>
 
