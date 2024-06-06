@@ -87,7 +87,7 @@ const Contact = () => {
           <h2>Email:</h2>
           <a
             href="mailto:Owaisyaqoob534@gmail.com"
-            className="text-sm md:text-base text-white underline"
+            className="text-sm md:text-base text-white"
           >
             Owaisyaqoob534@gmail.com
           </a>
@@ -98,7 +98,7 @@ const Contact = () => {
             href="https://www.google.com/maps/place/LION'S+DEN+MARTIAL+ARTS+ACADEMY/@33.8717102,74.9006797,17z/data=!3m1!4b1!4m6!3m5!1s0x38e1f5a4453b6b81:0x7c37fc9584632030!8m2!3d33.8717102!4d74.9032546!16s%2Fg%2F11n5bqgvqx?entry=ttu"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm md:text-base text-white underline"
+            className="text-sm md:text-base text-white"
           >
             Near Shaheed Park, Opposite Alamdar Masjid 3rd Floor Dangerpora,
             Pulwama.
@@ -109,7 +109,7 @@ const Contact = () => {
           <h2>Phone-Whatsapp:</h2>
           <a
             href="https://wa.me/919797555443"
-            className="text-sm md:text-base text-white underline block"
+            className="text-sm md:text-base text-white"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -117,7 +117,7 @@ const Contact = () => {
           </a>
           <a
             href="https://wa.me/919682347775"
-            className="text-sm md:text-base text-white underline block"
+            className="text-sm md:text-base text-white"
             target="_blank"
             rel="noopener noreferrer"
           >
