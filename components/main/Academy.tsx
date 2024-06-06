@@ -77,7 +77,7 @@ const Projects = () => {
     }
     try {
       const amountInRupees = pricing[title];
-      const amountInPaise = amountInRupees * 100; // Convert to paise
+      const amountInPaise = amountInRupees; // Convert to paise
 
       const response = await fetch("/api/create-order", {
         method: "POST",
@@ -299,8 +299,15 @@ const Projects = () => {
           </div>
           <p className="mt-4 text-gray-500 text-sm">
             Not a member?{" "}
-            <a href="#" className="text-blue-600 underline">
-              Start a 14 day free trial
+            <a
+              href="#"
+              className="text-blue-600 underline"
+              onClick={() => {
+                setIsModalOpen(true);
+                setIsSignInModalOpen(false);
+              }}
+            >
+              Click to Register
             </a>
             .
           </p>
