@@ -228,8 +228,8 @@ const Projects = () => {
           <p className="mt-4 text-gray-500 text-sm">
             Already a member?{" "}
             <a
-              href="#"
               className="text-blue-600 underline"
+              style={{ cursor: "pointer" }}
               onClick={() => {
                 setIsModalOpen(false);
                 setIsSignInModalOpen(true);
@@ -300,8 +300,8 @@ const Projects = () => {
           <p className="mt-4 text-gray-500 text-sm">
             Not a member?{" "}
             <a
-              href="#"
               className="text-blue-600 underline"
+              style={{ cursor: "pointer" }}
               onClick={() => {
                 setIsModalOpen(true);
                 setIsSignInModalOpen(false);
