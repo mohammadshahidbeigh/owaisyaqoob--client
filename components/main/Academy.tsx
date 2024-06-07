@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import AcademyCard from "../sub/AcademyCard";
 import Modal from "../main/Modal"; // Import the Modal component
+import Image from "next/image";
 
 type DescriptionKeys =
   | "For Beginners"
@@ -211,14 +212,10 @@ const Projects = () => {
             onChange={handleInputChange}
             className="p-4 border rounded w-full"
           />
-          <div className="text-sm">
-            <a
-              href="#"
-              className="font-semibold text-blue-600 hover:text-indigo-500"
-            >
-              Forgot password?
-            </a>
+          <div className="text-sm text-gray-500">
+            Must contain 1 uppercase letter, 1 number, min. 8 characters.
           </div>
+
           <button
             onClick={handleModalSubmit}
             className="mt-4 bg-blue-600 text-white py-2 px-4 rounded w-full"
@@ -281,21 +278,23 @@ const Projects = () => {
           <p className="mt-4 text-gray-500 text-sm">Or continue with</p>
           <div className="flex justify-around w-full mt-2">
             <button className="bg-white border rounded px-4 py-2 flex items-center">
-              <img
-                src="/path-to-google-logo.png"
+              <Image
+                src="/google.png"
                 alt="Google"
-                className="w-6 h-6 mr-2"
+                width={24}
+                height={24}
+                className="mr-2"
               />
               Google
             </button>
-            <button className="bg-white border rounded px-4 py-2 flex items-center">
+            {/* <button className="bg-white border rounded px-4 py-2 flex items-center">
               <img
                 src="/path-to-github-logo.png"
                 alt="GitHub"
                 className="w-6 h-6 mr-2"
               />
               GitHub
-            </button>
+            </button> */}
           </div>
           <p className="mt-4 text-gray-500 text-sm">
             Not a member?{" "}
