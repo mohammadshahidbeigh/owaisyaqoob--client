@@ -1,36 +1,49 @@
-// pages/api/register.ts
 import { NextApiRequest, NextApiResponse } from "next";
-import bcrypt from "bcryptjs";
-import clientPromise from "../../utils/db";
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  fetchSignInMethodsForEmail,
+} from "firebase/auth";
+import { auth, db } from "../../utils/db";
+import { doc, setDoc } from "firebase/firestore";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
-    const { name, email, password } = req.body; // Ensure all fields are being received
+    const { name, email, password, contact } = req.body;
 
     try {
-      const client = await clientPromise;
-      const db = client.db(process.env.DB_NAME); // Replace with your database name
-      const users = db.collection("users");
-
-      const user = await users.findOne({ email });
-      if (user) {
-        res.status(409).json({ message: "User already exists" });
-        return;
+      // Check if email already exists
+      const signInMethods = await fetchSignInMethodsForEmail(auth, email);
+      if (signInMethods.length > 0) {
+        return res
+          .status(400)
+          .json({ message: "User already exists, please sign in." });
       }
 
-      const hashedPassword = await bcrypt.hash(password, 10);
-      await users.insertOne({
-        name,
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
         email,
-        password: hashedPassword,
-      });
-
+        password
+      );
+      if (userCredential.user) {
+        await updateProfile(userCredential.user, { displayName: name });
+        await setDoc(doc(db, "users", userCredential.user.uid), {
+          name,
+          email,
+          contact,
+        });
+      }
       res.status(201).json({ message: "User registered successfully" });
-    } catch (error) {
+    } catch (error: any) {
       console.error("Registration error:", error);
+      if (error.code === "auth/email-already-in-use") {
+        return res
+          .status(400)
+          .json({ message: "User already exists, please sign in." });
+      }
       res.status(500).json({ message: "Internal Server Error", error });
     }
   } else {
