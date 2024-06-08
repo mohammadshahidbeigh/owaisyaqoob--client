@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AcademyCard from "../sub/AcademyCard";
 import Modal from "../main/Modal"; // Import the Modal component
 import Image from "next/image";
-import { signInWithGoogle } from "../../utils/auth";
+import { signInWithGoogle, resetPassword } from "../../utils/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -127,7 +127,9 @@ const Projects = () => {
       const rzp1 = new (window as any).Razorpay(options);
       rzp1.open();
     } catch (error) {
-      toast.error("Error during payment");
+      toast.error(
+        "An error occurred while processing payment. Please try again later"
+      );
     }
   };
 
@@ -172,6 +174,7 @@ const Projects = () => {
           setIsLoggedIn(true);
           setIsRegistered(true);
           toast.success("Registration done successfully.");
+          handlePayment(selectedTitle, customer);
         } else {
           toast.error("Internal server error. Please try again later.");
         }
@@ -191,19 +194,81 @@ const Projects = () => {
     setIsSignInModalOpen(false);
   };
 
-  const handleSignInSubmit = () => {
-    // Handle sign-in logic here
-    setIsLoggedIn(true);
-    setIsSignInModalOpen(false);
+  const handleSignInSubmit = async () => {
+    if (!customer.email || !customer.password) {
+      toast.error("All fields are required");
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: customer.email,
+          password: customer.password,
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setIsLoggedIn(true);
+        toast.success("Signed in successfully.");
+        setIsSignInModalOpen(false);
+        if (selectedTitle) {
+          handlePayment(selectedTitle, customer); // Assuming selectedTitle is set elsewhere
+        } else {
+          // Handle the case where selectedTitle is null
+          console.error("selectedTitle is null");
+        }
+      } else {
+        const data = await response.json();
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error("Error during sign-in");
+    }
   };
 
   const handleGoogleSignIn = async () => {
     try {
-      await signInWithGoogle();
+      const user = await signInWithGoogle();
       setIsLoggedIn(true);
+      toast.success("Signed in successfully.");
       setIsSignInModalOpen(false);
+      if (selectedTitle) {
+        handlePayment(selectedTitle, customer); // Assuming selectedTitle is set elsewhere
+      } else {
+        // Handle the case where selectedTitle is null
+        console.error("selectedTitle is null");
+      }
     } catch (error) {
-      toast.error("Google sign-in failed. Please try again.");
+      if (isErrorWithCode(error) && error.code === "UserNotRegistered") {
+        toast.error("You are not an existing member, please register first.");
+      } else {
+        toast.error("Google sign-in failed. Please try again.");
+      }
+    }
+  };
+
+  // Type guard to check if the error is an Error object with a 'code' property
+  function isErrorWithCode(error: unknown): error is { code: string } {
+    return typeof error === "object" && error !== null && "code" in error;
+  }
+
+  const handleForgotPassword = async () => {
+    if (!customer.email) {
+      toast.error("Please enter your email to reset the password.");
+      return;
+    }
+
+    try {
+      await resetPassword(customer.email);
+      toast.info("Password reset email sent. Please check your inbox.");
+    } catch (error) {
+      toast.error("Error sending password reset email. Please try again.");
     }
   };
 
@@ -223,7 +288,7 @@ const Projects = () => {
         </h1>
       </div>
       <Modal isOpen={isModalOpen} onClose={handleModalClose}>
-        <div className="flex flex-col items-center gap-4 p-8 bg-white rounded-lg shadow-lg w-full ">
+        <div className="flex flex-col items-center gap-4 p-8 bg-white rounded-lg shadow-lg w-full max-w-md mx-auto ">
           <h2 className="text-2xl font-semibold">Create a new account</h2>
           <p className="text-gray-600">Enter your details to register.</p>
           <input
@@ -306,6 +371,7 @@ const Projects = () => {
       <Modal isOpen={isSignInModalOpen} onClose={handleSignInModalClose}>
         <div className="flex flex-col items-center gap-4 p-8 bg-white rounded-lg shadow-lg w-full max-w-md mx-auto">
           <h2 className="text-2xl font-semibold">Sign in to your account</h2>
+          <p className="text-gray-600">Enter your details to sign in.</p>
           <input
             type="email"
             name="email"
@@ -313,36 +379,53 @@ const Projects = () => {
             value={customer.email}
             onChange={handleInputChange}
             className="mt-4 p-4 border rounded w-full"
+            required
           />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={customer.password}
-            onChange={handleInputChange}
-            className="mt-4 p-4 border rounded w-full"
-          />
-          <div className="flex items-center justify-between w-full">
-            <label className="flex items-center">
+          <div className="relative w-full">
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              placeholder="Password"
+              value={customer.password}
+              onChange={handleInputChange}
+              className="p-4 border rounded w-full"
+              required
+            />
+            <span
+              onClick={toggleShowPassword}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
+            >
+              {showPassword ? "🙈" : "👁️"}
+            </span>
+          </div>
+          <div className="flex items-center justify-end w-full">
+            {/* <label className="flex items-center">
               <input type="checkbox" className="mr-2" />
               Remember me
-            </label>
+            </label> */}
             <a
-              href="#"
-              className="text-blue-600 font-semibold hover:text-indigo-500"
-              onClick={() =>
-                toast.info("Password recovery is not yet implemented.")
-              }
+              className="text-blue-600"
+              style={{ cursor: "pointer" }}
+              onClick={handleForgotPassword}
             >
               Forgot password?
             </a>
           </div>
-          <button
-            onClick={handleSignInSubmit}
-            className="mt-4 bg-blue-600 text-white py-2 px-4 rounded w-full"
-          >
-            Sign in
-          </button>
+          {isLoggedIn ? (
+            <button
+              onClick={() => handlePayment(selectedTitle!, customer)}
+              className="mt-4 bg-green-600 text-white py-2 px-4 rounded w-full"
+            >
+              Proceed for Payment
+            </button>
+          ) : (
+            <button
+              onClick={handleSignInSubmit}
+              className="mt-4 bg-blue-600 text-white py-2 px-4 rounded w-full"
+            >
+              Sign in
+            </button>
+          )}
           <p className="mt-4 text-gray-500 text-sm">Or continue with</p>
           <div className="flex justify-around w-full mt-2">
             <button
