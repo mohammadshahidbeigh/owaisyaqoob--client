@@ -28,13 +28,18 @@ async function sendUserEmail(email: string, name: string, program: string) {
   await transporter.sendMail(mailOptions);
 }
 
-async function sendAdminEmail(name: string, email: string, program: string) {
+async function sendAdminEmail(
+  name: string,
+  email: string,
+  contact: string,
+  program: string
+) {
   const adminEmail = process.env.ADMIN_EMAIL;
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: adminEmail,
     subject: "New member registration",
-    text: `A new member has registered for the ${program} Program.\n\nName: ${name}\nEmail: ${email}`,
+    text: `A new member has registered for the ${program} Program.\n\nName: ${name}\nEmail: ${email}\nContact: ${contact}`,
   };
 
   await transporter.sendMail(mailOptions);
@@ -77,7 +82,7 @@ export default async function handler(
 
         // Send emails
         await sendUserEmail(email, name, program);
-        await sendAdminEmail(name, email, program);
+        await sendAdminEmail(name, email, contact, program);
       }
       res.status(201).json({ message: "User registered successfully" });
     } catch (error: any) {
