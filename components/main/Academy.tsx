@@ -21,6 +21,7 @@ type Customer = {
   email: string;
   contact: string;
   password: string;
+  program: DescriptionKeys | null;
 };
 
 const Projects = () => {
@@ -32,6 +33,7 @@ const Projects = () => {
     email: "",
     contact: "",
     password: "",
+    program: null,
   });
   const [selectedTitle, setSelectedTitle] = useState<DescriptionKeys | null>(
     null
@@ -41,7 +43,7 @@ const Projects = () => {
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [isRegistered, setIsRegistered] = useState(false);
-
+  const [loading, setLoading] = useState(false); // Loading state
   const handleToggleExpand = (title: DescriptionKeys) => {
     setExpandedCard(expandedCard === title ? null : title);
   };
@@ -140,6 +142,7 @@ const Projects = () => {
 
   const handlePaymentClick = (title: DescriptionKeys) => {
     setSelectedTitle(title);
+    setCustomer((prev) => ({ ...prev, program: title }));
     setIsModalOpen(true);
   };
 
@@ -147,17 +150,31 @@ const Projects = () => {
     setIsModalOpen(false);
   };
 
+  const validatePassword = (password: string) => {
+    // Updated regex to include at least one special character
+    const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=])[A-Za-z\d@#$%^&+=]{8,}$/;
+    return regex.test(password);
+  };
+
   const handleModalSubmit = async () => {
     if (
       !customer.name ||
       !customer.email ||
       !customer.contact ||
-      !customer.password
+      !customer.password ||
+      !customer.program
     ) {
       toast.error("All fields are required");
       return;
     }
 
+    if (!validatePassword(customer.password)) {
+      toast.error(
+        "Password must contain at least 1 uppercase letter, 1 number, 1 special character, and be at least 8 characters long"
+      );
+      return;
+    }
+    setLoading(true); // Start loading
     if (selectedTitle) {
       // Handle registration logic here
       const response = await fetch("/api/register", {
@@ -167,14 +184,14 @@ const Projects = () => {
         },
         body: JSON.stringify(customer),
       });
-
+      setLoading(false); // Stop loading
       if (response.ok) {
         const data = await response.json();
         if (data.message === "User registered successfully") {
           setIsLoggedIn(true);
           setIsRegistered(true);
           toast.success("Registration done successfully.");
-          handlePayment(selectedTitle, customer);
+          handlePayment(customer.program, customer);
         } else {
           toast.error("Internal server error. Please try again later.");
         }
@@ -336,7 +353,8 @@ const Projects = () => {
             </span>
           </div>
           <div className="text-xs text-gray-500">
-            Must contain 1 uppercase letter, 1 number, min. 8 characters.
+            Must contain 1 uppercase letter, 1 special character and 1 number,
+            min. 8 characters.
           </div>
           {isRegistered ? (
             <button
@@ -349,8 +367,9 @@ const Projects = () => {
             <button
               onClick={handleModalSubmit}
               className="mt-4 bg-blue-600 text-white py-2 px-4 rounded w-full"
+              disabled={loading}
             >
-              Register
+              {loading ? "Registering..." : "Register"}
             </button>
           )}
           <p className="mt-4 text-gray-500 text-sm">
