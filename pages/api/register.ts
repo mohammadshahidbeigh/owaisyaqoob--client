@@ -34,7 +34,7 @@ async function sendAdminEmail(name: string, email: string, program: string) {
     from: process.env.EMAIL_USER,
     to: adminEmail,
     subject: "New member registration",
-    text: `A new member has registered for the ${program} program.\n\nName: ${name}\nEmail: ${email}`,
+    text: `A new member has registered for the ${program} Program.\n\nName: ${name}\nEmail: ${email}`,
   };
 
   await transporter.sendMail(mailOptions);
