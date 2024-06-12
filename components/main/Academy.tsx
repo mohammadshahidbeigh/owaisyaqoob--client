@@ -44,6 +44,8 @@ const Projects = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isRegistered, setIsRegistered] = useState(false);
   const [loading, setLoading] = useState(false); // Loading state
+  const [paymentSuccessful, setPaymentSuccessful] = useState(false); // Payment success state
+
   const handleToggleExpand = (title: DescriptionKeys) => {
     setExpandedCard(expandedCard === title ? null : title);
   };
@@ -106,20 +108,16 @@ const Projects = () => {
         amount: orderData.amount,
         currency: "INR",
         name: "Lions Den Martial Arts Academy",
-        description: `Payment for ${title}`,
+        description: `Payment for - ${title}`,
         order_id: orderData.id,
         handler: function (response: any) {
-          toast.success(
-            `Payment successful! Payment ID: ${response.razorpay_payment_id}`
-          );
+          setPaymentSuccessful(true); // Set payment successful state
+          toast.success(`Payment successful!`);
         },
         prefill: {
           name: customer.name,
           email: customer.email,
           contact: customer.contact,
-        },
-        notes: {
-          address: "Corporate Office",
         },
         theme: {
           color: "#3399cc",
@@ -364,8 +362,11 @@ const Projects = () => {
             <button
               onClick={() => handlePayment(selectedTitle!, customer)}
               className="text-white bg-green-600 hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg w-full px-4 py-2 dark:focus:ring-green-400/55 mt-4"
+              disabled={paymentSuccessful} // Disable button if payment is successful
             >
-              Proceed for Payment
+              {paymentSuccessful
+                ? "Payment successful! ✅"
+                : "Proceed for Payment"}
             </button>
           ) : (
             <button
@@ -426,10 +427,6 @@ const Projects = () => {
             </span>
           </div>
           <div className="flex items-center justify-end w-full">
-            {/* <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              Remember me
-            </label> */}
             <a
               className="text-blue-600 hover:text-blue-400"
               style={{ cursor: "pointer" }}
@@ -442,8 +439,11 @@ const Projects = () => {
             <button
               onClick={() => handlePayment(selectedTitle!, customer)}
               className="text-white bg-green-600 hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg w-full px-4 py-2 dark:focus:ring-green-400/55 mt-4"
+              disabled={paymentSuccessful} // Disable button if payment is successful
             >
-              Proceed for Payment
+              {paymentSuccessful
+                ? "Payment successful! ✅"
+                : "Proceed for Payment"}
             </button>
           ) : (
             <button
