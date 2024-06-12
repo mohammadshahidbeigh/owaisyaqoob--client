@@ -305,16 +305,20 @@ const Projects = () => {
         </h1>
       </div>
       <Modal isOpen={isModalOpen} onClose={handleModalClose}>
-        <div className="flex flex-col items-center gap-4 p-8 bg-white rounded-lg shadow-lg w-full max-w-md mx-auto ">
-          <h2 className="md:text-2xl font-semibold">Create a new account</h2>
-          <p className="text-gray-600">Enter your details to register.</p>
+        <div className="flex flex-col items-center gap-4 p-2 bg-white rounded-lg shadow-lg w-full max-w-md mx-auto mt-4">
+          <h2 className=" text-xl md:text-2xl font-semibold">
+            Create a new account
+          </h2>
+          <p className="text-gray-600 text-center">
+            Enter your details to register.
+          </p>
           <input
             type="text"
             name="name"
             placeholder="Full Name"
             value={customer.name}
             onChange={handleInputChange}
-            className="mt-4 p-4 border rounded w-full"
+            className=" mt-4 p-4 border rounded w-full"
             required
           />
           <input
@@ -388,9 +392,13 @@ const Projects = () => {
         </div>
       </Modal>
       <Modal isOpen={isSignInModalOpen} onClose={handleSignInModalClose}>
-        <div className="flex flex-col items-center gap-4 p-8 bg-white rounded-lg shadow-lg w-full max-w-md mx-auto continue-with-container">
-          <h2 className="md:text-2xl font-semibold">Sign in to your account</h2>
-          <p className="text-gray-600">Enter your details to sign in.</p>
+        <div className="flex flex-col items-center gap-4 p-2 bg-white rounded-lg shadow-lg w-full max-w-md mx-auto mt-4 continue-with-container">
+          <h2 className="text-xl md:text-2xl font-semibold">
+            Sign in to your account
+          </h2>
+          <p className="text-gray-600 text-center">
+            Enter your details to sign in.
+          </p>
           <input
             type="email"
             name="email"
@@ -475,7 +483,6 @@ const Projects = () => {
             >
               Click to Register
             </a>
-            .
           </p>
         </div>
       </Modal>

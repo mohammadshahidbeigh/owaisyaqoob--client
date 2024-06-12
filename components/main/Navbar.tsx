@@ -16,6 +16,10 @@ const Navbar = () => {
     setIsToggleActive(false);
   };
 
+  const handleLinkClick = () => {
+    closeSidebar();
+  };
+
   return (
     <div className="w-full h-[65px] font-bold fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#030014] z-50 px-4 md:px-8 lg:px-12 flex items-center justify-between">
       <button onClick={toggleButtonClick} className="text-white md:hidden">
@@ -51,24 +55,28 @@ const Navbar = () => {
               <a
                 href="#home"
                 className="flex items-center p-6 text-white hover:bg-gray-700 rounded-lg"
+                onClick={handleLinkClick}
               >
                 <FiHome className="mr-2" /> Home
               </a>
               <a
                 href="#about-me"
                 className="flex items-center p-6 text-white hover:bg-gray-700 rounded-lg"
+                onClick={handleLinkClick}
               >
                 <FiUser className="mr-2" /> About me
               </a>
               <a
                 href="#academy"
                 className="flex items-center p-6 text-white hover:bg-gray-700 rounded-lg"
+                onClick={handleLinkClick}
               >
                 <FiBook className="mr-2" /> Academy
               </a>
               <a
                 href="#contact"
                 className="flex items-center p-6 text-white hover:bg-gray-700 rounded-lg"
+                onClick={handleLinkClick}
               >
                 <FiMail className="mr-2" /> Contact
               </a>

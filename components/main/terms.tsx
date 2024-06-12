@@ -13,16 +13,20 @@ const TermsAndConditions: React.FC = () => {
   const currentDate = formatDate(new Date());
   return (
     <div className="container mx-auto p-8">
-      <h1 className="text-2xl font-bold mb-4">Terms and Conditions</h1>
+      <h1 className="text-xl md:text-2xl  font-bold mb-4">
+        Terms and Conditions
+      </h1>
       <p>Effective date: {currentDate}</p>
 
-      <h2 className="text-1xl font-bold mt-4">Introduction</h2>
+      <h2 className="text-base md:text-xl font-bold mt-4">Introduction</h2>
       <p>
         Welcome to Lions Den Martial Arts Academy. These Terms and Conditions
         govern your use of our website and services.
       </p>
 
-      <h2 className="text-1xl font-bold mt-4">Membership and Fees</h2>
+      <h2 className="text-base md:text-xl font-bold mt-4">
+        Membership and Fees
+      </h2>
       <p>
         All membership fees are due monthly and must be paid on time. We reserve
         the right to terminate memberships for non-payment or violation of our
@@ -30,7 +34,7 @@ const TermsAndConditions: React.FC = () => {
         regulations to ensure a safe and respectful environment for everyone.
       </p>
 
-      <h2 className="text-1xl font-bold mt-4">Liability</h2>
+      <h2 className="text-base md:text-xl font-bold mt-4">Liability</h2>
       <p>
         Lions Den Martial Arts Academy is not liable for any injuries sustained
         during training. Members participate at their own risk and are
@@ -39,14 +43,14 @@ const TermsAndConditions: React.FC = () => {
         insurance coverage.
       </p>
 
-      <h2 className="text-1xl font-bold mt-4">Payment Terms</h2>
+      <h2 className="text-base md:text-xl font-bold mt-4">Payment Terms</h2>
       <p>
         Payments for membership and classes can be made through our website
         using Razorpay. By using our payment gateway, you agree to Razorpay’s
         terms and conditions as well.
       </p>
 
-      <h2 className="text-1xl font-bold mt-4">Refund Policy</h2>
+      <h2 className="text-base md:text-xl font-bold mt-4">Refund Policy</h2>
       <p>
         Membership fees are non-refundable except in the case of a documented
         medical condition that prevents participation. Refund requests must be
@@ -54,7 +58,7 @@ const TermsAndConditions: React.FC = () => {
         Approved refunds will be processed within 5-7 working days.
       </p>
 
-      <h2 className="text-1xl font-bold mt-4">Changes to Terms</h2>
+      <h2 className="text-base md:text-xl font-bold mt-4">Changes to Terms</h2>
       <p>
         We may update these terms and conditions from time to time. We will
         notify you of any changes by posting the new terms on our website. Your
@@ -62,7 +66,7 @@ const TermsAndConditions: React.FC = () => {
         acceptance of the new terms.
       </p>
 
-      <h2 className="text-1xl font-bold mt-4">Contact Us</h2>
+      <h2 className="text-base md:text-xl font-bold mt-4">Contact Us</h2>
       <p>If you have any questions about these Terms, please contact us:</p>
       <ul className="list-disc ml-8">
         <li>By email: Owaisyaqoob534@gmail.com</li>
