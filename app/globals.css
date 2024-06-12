@@ -102,3 +102,33 @@ html {
 * {
   scrollbar-width: none;
 }
+
+.continue-with-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.continue-with {
+  position: relative;
+  padding: 0 1rem; /* Add padding to create space between text and lines */
+}
+
+.continue-with::before,
+.continue-with::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: calc(50% - 2rem); /* Adjust width based on padding */
+  border-bottom: 1px solid #d1d5db; /* This color corresponds to 'text-gray-500' */
+}
+
+.continue-with::before {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.continue-with::after {
+  right: 0;
+  transform: translateX(100%);
+}

@@ -306,7 +306,7 @@ const Projects = () => {
       </div>
       <Modal isOpen={isModalOpen} onClose={handleModalClose}>
         <div className="flex flex-col items-center gap-4 p-8 bg-white rounded-lg shadow-lg w-full max-w-md mx-auto ">
-          <h2 className="text-2xl font-semibold">Create a new account</h2>
+          <h2 className="md:text-2xl font-semibold">Create a new account</h2>
           <p className="text-gray-600">Enter your details to register.</p>
           <input
             type="text"
@@ -359,14 +359,14 @@ const Projects = () => {
           {isRegistered ? (
             <button
               onClick={() => handlePayment(selectedTitle!, customer)}
-              className="mt-4 bg-green-600 text-white py-2 px-4 rounded w-full"
+              className="text-white bg-green-600 hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg w-full px-4 py-2 dark:focus:ring-green-400/55 mt-4"
             >
               Proceed for Payment
             </button>
           ) : (
             <button
               onClick={handleModalSubmit}
-              className="mt-4 bg-blue-600 text-white py-2 px-4 rounded w-full"
+              className="text-white bg-blue-600 hover:bg-[#4285F4] focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg w-full px-4 py-2 dark:focus:ring-[#4285F4]/55 mt-4"
               disabled={loading}
             >
               {loading ? "Registering..." : "Register"}
@@ -388,8 +388,8 @@ const Projects = () => {
         </div>
       </Modal>
       <Modal isOpen={isSignInModalOpen} onClose={handleSignInModalClose}>
-        <div className="flex flex-col items-center gap-4 p-8 bg-white rounded-lg shadow-lg w-full max-w-md mx-auto">
-          <h2 className="text-2xl font-semibold">Sign in to your account</h2>
+        <div className="flex flex-col items-center gap-4 p-8 bg-white rounded-lg shadow-lg w-full max-w-md mx-auto continue-with-container">
+          <h2 className="md:text-2xl font-semibold">Sign in to your account</h2>
           <p className="text-gray-600">Enter your details to sign in.</p>
           <input
             type="email"
@@ -423,7 +423,7 @@ const Projects = () => {
               Remember me
             </label> */}
             <a
-              className="text-blue-600"
+              className="text-blue-600 hover:text-blue-400"
               style={{ cursor: "pointer" }}
               onClick={handleForgotPassword}
             >
@@ -433,23 +433,25 @@ const Projects = () => {
           {isLoggedIn ? (
             <button
               onClick={() => handlePayment(selectedTitle!, customer)}
-              className="mt-4 bg-green-600 text-white py-2 px-4 rounded w-full"
+              className="text-white bg-green-600 hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg w-full px-4 py-2 dark:focus:ring-green-400/55 mt-4"
             >
               Proceed for Payment
             </button>
           ) : (
             <button
               onClick={handleSignInSubmit}
-              className="mt-4 bg-blue-600 text-white py-2 px-4 rounded w-full"
+              className="text-white bg-blue-600 hover:bg-[#4285F4] focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg w-full px-4 py-2 dark:focus:ring-[#4285F4]/55 mt-4"
             >
               Sign in
             </button>
           )}
-          <p className="mt-4 text-gray-500 text-sm">Or continue with</p>
+          <p className="mt-4 text-gray-500 text-sm continue-with ">
+            Or continue with
+          </p>
           <div className="flex justify-around w-full mt-2">
             <button
               onClick={handleGoogleSignIn}
-              className="bg-white border rounded px-4 py-2 flex items-center"
+              className="bg-white border rounded-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:focus:ring-gray-500 px-4 py-2 flex items-center"
             >
               <Image
                 src="/google.png"
