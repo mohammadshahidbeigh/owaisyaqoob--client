@@ -169,7 +169,7 @@ const ContactForm = ({ status }: { status: "success" | "error" | "idle" }) => (
       />
       <button
         type="submit"
-        className="w-full p-3 bg-purple-500 text-white font-bold rounded cursor-pointer"
+        className="w-full p-3 bg-purple-500 text-white font-bold rounded cursor-pointer ext-white hover:bg-purple-400 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg w-full dark:focus:ring-purple-400/55 mt-4"
       >
         Submit
       </button>

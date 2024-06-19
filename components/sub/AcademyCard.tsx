@@ -44,7 +44,7 @@ const AcademyCard = ({
         </p>
         <button
           onClick={onPayment}
-          className="mt-4 bg-purple-500 text-white py-2 px-4 rounded"
+          className="mt-4 bg-purple-500 text-white py-2 px-4 rounded ext-white hover:bg-purple-400 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg w-full px-4 py-2 dark:focus:ring-purple-400/55 mt-4"
         >
           {`Pricing: ₹${pricing}`}
         </button>
