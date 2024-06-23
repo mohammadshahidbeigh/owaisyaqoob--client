@@ -67,7 +67,7 @@ const FighterProfile: React.FC = () => {
 
       {/* PRO RESULT Section */}
       <div className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 p-6 rounded-md shadow-lg w-full">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">
+        <h2 className="text-xl md:text-3xl font-bold mb-4 text-center">
           PRO RESULT
         </h2>
         <div className="bg-gray-900 rounded-md shadow-lg w-full overflow-x-auto">
