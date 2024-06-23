@@ -25,7 +25,7 @@ const Projects: React.FC = () => {
 
         <AcademyCard
           title="Road to the UFC Lightweight Division: The Ultimate Destination"
-          description=" As I recount this journey, it underscores my unwavering dedication to mastering the multifaceted world of martial arts. With each challenge embraced and every milestone achieved, I am fueled by the passion to continue pushing my limits. With my eyes set on the future, the ultimate destination looms large – the road to the UFC Lightweight division. Excitement courses through my veins as I anticipate the challenges and triumphs that lie ahead, eager to etch my name in the annals of the UFC Lightweight division and achieve new heights in the dynamic world of Mixed Martial Arts."
+          description=" As I recount this journey, it underscores my unwavering dedication to mastering the multifaceted world of martial arts. With each challenge embraced and every milestone achieved, I am fueled by the passion to continue pushing my limits. With my eyes set on the future, the ultimate destination looms large – the road to the UFC Lightweight division. Excitement courses through my veins as I anticipate the challenges and triumphs that lie ahead, eager to etch my name in the annals of the UFC Lightweight division and achieve new heights in the dynamic world of Mixed Martial Arts. Moreover, my ambition extends beyond personal success; I am determined to represent India in MMA, showcasing the talent and spirit of my nation on the global stage."
         />
       </div>
       <div className="mt-2 w-full flex flex-wrap justify-center">
