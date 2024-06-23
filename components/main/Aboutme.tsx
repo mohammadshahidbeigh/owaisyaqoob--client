@@ -73,7 +73,7 @@ const Projects: React.FC = () => {
             description="With Ruslan - Wrestling and striking coach "
           />
           <ImageCard
-            src="/gymF10.jpg"
+            src="/gymF10.png"
             alt="Image with UFC fighter 4"
             description="Matrix Fight Night Season 14- Weight Check "
           />
