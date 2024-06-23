@@ -5,8 +5,8 @@ const FighterProfile: React.FC = () => {
   return (
     <div className="container mx-auto px-4">
       {/* Fighter Profile Section */}
-      <div className="bg-[#030018] text-teal-400 p-6 rounded-md shadow-lg w-full mb-8">
-        <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center">
+      <div className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 p-6 rounded-md shadow-lg w-full mb-8">
+        <h2 className="text-2xl md:text-4xl  font-bold mb-4 text-center">
           Fight Stats
         </h2>
         <div className="flex flex-col sm:flex-row sm:flex-wrap justify-between items-center">
@@ -66,13 +66,13 @@ const FighterProfile: React.FC = () => {
       </div>
 
       {/* PRO RESULT Section */}
-      <div className="bg-[#030018] text-teal-400 p-6 rounded-md shadow-lg w-full">
-        <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center">
+      <div className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 p-6 rounded-md shadow-lg w-full">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">
           PRO RESULT
         </h2>
         <div className="bg-gray-900 rounded-md shadow-lg w-full overflow-x-auto">
-          <table className="min-w-full text-teal-400">
-            <thead className="bg-teal-600">
+          <table className="min-w-full text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            <thead className="bg-purple-500">
               <tr>
                 <th className="text-white py-2 px-4">SEASON</th>
                 <th className="text-white py-2 px-4">TEAM</th>
@@ -86,7 +86,7 @@ const FighterProfile: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              <tr className="border-b border-teal-600">
+              <tr className="border-b border-purple-500">
                 <td className="text-white py-2 px-4">March 2023</td>
                 <td className="text-white py-2 px-4">MFN 11</td>
                 <td className="text-white py-2 px-4">Loss</td>
@@ -99,8 +99,8 @@ const FighterProfile: React.FC = () => {
               </tr>
             </tbody>
           </table>
-          <table className="mt-8 min-w-full text-teal-400">
-            <thead className="bg-teal-600">
+          <table className="mt-8 min-w-full text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            <thead className="bg-purple-500">
               <tr>
                 <th className="text-white py-2 px-4">SEASON</th>
                 <th className="text-white py-2 px-4">TEAM</th>
@@ -114,7 +114,7 @@ const FighterProfile: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              <tr className="border-b border-teal-600">
+              <tr className="border-b border-purple-500">
                 <td className="text-white py-2 px-4">March 2024</td>
                 <td className="text-white py-2 px-4">MFN 14</td>
                 <td className="text-white py-2 px-4">Win</td>
