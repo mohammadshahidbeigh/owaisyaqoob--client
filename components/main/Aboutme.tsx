@@ -50,18 +50,17 @@ const Projects: React.FC = () => {
           <ImageCard
             src="/gymF6.jpg"
             alt="Image with UFC fighter 3"
-            description="With  Bellator Lightweight Champion Usman Nurmagomedov "
+            description="With Bellator Lightweight Champion Usman Nurmagomedov "
           />
           <ImageCard
             src="/gymF3.jpg"
             alt="Image with UFC fighter 4"
-            description="With World Champion Khabib's  UFC Belt"
+            description="With World Champion Khabib's UFC Belt"
           />
           <ImageCard
             src="/gymF4.jpg"
             alt="Image with UFC fighter 4"
-            description="With Flyweight division Champion
-Tagir Ulanbekov"
+            description="With Flyweight division Champion Tagir Ulanbekov"
           />
           <ImageCard
             src="/gymF7.jpg"
@@ -71,8 +70,7 @@ Tagir Ulanbekov"
           <ImageCard
             src="/gymF8.jpg"
             alt="Image with UFC fighter 4"
-            description="With 
-Ruslan - Wrestling and striking coach "
+            description="With Ruslan - Wrestling and striking coach "
           />
           <ImageCard
             src="/gymF10.jpg"
