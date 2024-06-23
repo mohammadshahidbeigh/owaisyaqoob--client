@@ -19,7 +19,7 @@ export function generateViewport(): Viewport {
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Owais Yaqoob ",
+    template: "%s | Owais Yaqoob",
     default: "Owais Yaqoob | MMA Fighter",
   },
   description: "Owais Yaqoob - MMA Fighter - Personal portfolio website",
