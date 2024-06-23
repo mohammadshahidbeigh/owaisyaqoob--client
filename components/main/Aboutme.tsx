@@ -1,6 +1,7 @@
 import React from "react";
 import AcademyCard from "../sub/AboutmeText";
 import ImageCard from "../sub/ImageCard"; // Import your ImageCard component
+import FighterProfile from "./FighterProfile";
 
 const Projects: React.FC = () => {
   return (
@@ -23,9 +24,12 @@ const Projects: React.FC = () => {
         />
 
         <AcademyCard
-          title="Road to the UFC: The Ultimate Destination"
-          description="As I recount this journey, it underscores my unwavering dedication to mastering the multifaceted world of martial arts. With each challenge embraced and every milestone achieved, I am fueled by the passion to continue pushing my limits. With my eyes set on the future, the ultimate destination looms large – the road to the Ultimate Fighting Championship. Excitement courses through my veins as I anticipate the challenges and triumphs that lie ahead, eager to etch my name in the annals of the UFC and achieve new heights in the dynamic world of Mixed Martial Arts."
+          title="Road to the UFC Lightweight Division: The Ultimate Destination"
+          description=" As I recount this journey, it underscores my unwavering dedication to mastering the multifaceted world of martial arts. With each challenge embraced and every milestone achieved, I am fueled by the passion to continue pushing my limits. With my eyes set on the future, the ultimate destination looms large – the road to the UFC Lightweight division. Excitement courses through my veins as I anticipate the challenges and triumphs that lie ahead, eager to etch my name in the annals of the UFC Lightweight division and achieve new heights in the dynamic world of Mixed Martial Arts."
         />
+      </div>
+      <div className="mt-2 w-full flex flex-wrap justify-center">
+        <FighterProfile />
       </div>
 
       <div className="h-full w-full flex flex-col items-center py-10">

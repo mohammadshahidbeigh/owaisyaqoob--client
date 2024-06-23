@@ -7,7 +7,6 @@ import Footer from "@/components/main/Footer";
 import "./globals.css";
 import type { Metadata } from "next";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 // Define the generateViewport function
@@ -23,22 +22,21 @@ export const metadata: Metadata = {
     template: "%s | Owais Yaqoob",
     default: "Owais Yaqoob | MMA Fighter",
   },
-  description:
-    "Owais Yaqoob - MMA Fighter - My personal portfolio website",
+  description: "Owais Yaqoob - MMA Fighter - Personal portfolio website",
   authors: [{ name: "Owais Yaqoob" }],
   applicationName: "Owais Yaqoob - Portfolio",
   generator: "Next.js",
   keywords: [
     "Owais Yaqoob",
-    "Owais",
+    "Owais Yaqoob Pulwama",
     "Owais Yaqoob",
     "Owais Yaqoob J&K MMA Fighter",
-    "Owais.cc",
-    "nextjs",
+    "Owais yaqoob MFN",
+    "Owais Yaqoob MFN",
     "portfolio",
-    "TypeScript",
+    "MMA KASHMIR",
     "MMA Fighter",
-    "MMA Fighter",
+    "MMA Fighter Kashmir",
     "Jammu and Kashmir",
     "Kashmir",
     "Pulwama",
@@ -48,9 +46,8 @@ export const metadata: Metadata = {
   publisher: "Owais Yaqoob",
   openGraph: {
     title: "Owais Yaqoob | MMA Fighter | Portfolio",
-    description:
-      "Owais Yaqoob | MMA Fighter | My personal portfolio website",
-    url: "https://owaisyaqoob.vercel.app/",
+    description: "Owais Yaqoob | MMA Fighter |",
+    url: "https://owaisyaqoob.vercel.app",
     siteName: "Owais Yaqoob - Portfolio",
     // images: "/opengraph-image.png",
     locale: "en-US",
