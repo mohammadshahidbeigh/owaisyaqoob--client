@@ -6,7 +6,9 @@ const FighterProfile: React.FC = () => {
     <div className="container mx-auto px-4">
       {/* Fighter Profile Section */}
       <div className="bg-[#030018] text-teal-400 p-6 rounded-md shadow-lg w-full mb-8">
-        <h2 className="text-3xl font-bold mb-4 text-center">Fight Stats</h2>
+        <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center">
+          Fight Stats
+        </h2>
         <div className="flex flex-col sm:flex-row sm:flex-wrap justify-between items-center">
           <div className="flex flex-col w-full sm:w-1/2 md:w-1/3 p-2">
             <span className="font-semibold">Name:</span>
@@ -65,7 +67,9 @@ const FighterProfile: React.FC = () => {
 
       {/* PRO RESULT Section */}
       <div className="bg-[#030018] text-teal-400 p-6 rounded-md shadow-lg w-full">
-        <h2 className="text-3xl font-bold mb-4 text-center">PRO RESULT</h2>
+        <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center">
+          PRO RESULT
+        </h2>
         <div className="bg-gray-900 rounded-md shadow-lg w-full overflow-x-auto">
           <table className="min-w-full text-teal-400">
             <thead className="bg-teal-600">
