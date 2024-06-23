@@ -12,11 +12,11 @@ const FighterProfile: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:flex-wrap justify-between items-center">
           <div className="flex flex-col w-full sm:w-1/2 md:w-1/3 p-2">
             <span className="font-semibold">Name:</span>
-            <span>Owais Yaqoob</span>
+            <span className="text-white">Owais Yaqoob</span>
           </div>
           <div className="flex flex-col w-full sm:w-1/2 md:w-1/3 p-2">
             <span className="font-semibold">Nationality:</span>
-            <span className="flex items-center">
+            <span className="flex items-center text-white">
               <Image
                 src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg"
                 alt="India"
@@ -29,38 +29,38 @@ const FighterProfile: React.FC = () => {
           </div>
           <div className="flex flex-col w-full sm:w-1/2 md:w-1/3 p-2">
             <span className="font-semibold">Position:</span>
-            <span>Lightweight</span>
+            <span className="text-white">Lightweight</span>
           </div>
           <div className="flex flex-col w-full sm:w-1/2 md:w-1/3 p-2">
             <span className="font-semibold">Born:</span>
-            <span>Kashmir, India</span>
+            <span className="text-white">Kashmir, India</span>
           </div>
           <div className="flex flex-col w-full sm:w-1/2 md:w-1/3 p-2">
             <span className="font-semibold">Profile:</span>
-            <span>Pro</span>
+            <span className="text-white">Pro</span>
           </div>
           <div className="flex flex-col w-full sm:w-1/2 md:w-1/3 p-2">
             <span className="font-semibold">Pro MMA Record:</span>
-            <span>1-1-0 (Win-Loss-Draw)</span>
+            <span className="text-white">1-1-0 (Win-Loss-Draw)</span>
           </div>
           <div className="flex flex-col w-full sm:w-1/2 md:w-1/3 p-2">
             <span className="font-semibold">Current Streak:</span>
-            <span>1 Win - 1 Loss</span>
+            <span className="text-white">1 Win - 1 Loss</span>
           </div>
           <div className="flex flex-col w-full sm:w-1/2 md:w-1/3 p-2">
             <span className="font-semibold">Fighting out of:</span>
-            <span>Kashmir, India</span>
+            <span className="text-white">Kashmir, India</span>
           </div>
           <div className="flex flex-col w-full sm:w-1/2 md:w-1/3 p-2">
             <span className="font-semibold">Regional Rankings:</span>
-            <p className="text-sm">
+            <p className="text-sm text-white">
               Owais Yaqoob is the 72nd ranked of 80 active Asia South Pro
               Lightweights.
             </p>
           </div>
           <div className="flex flex-col w-full sm:w-1/2 md:w-1/3 p-2">
             <span className="font-semibold">MFN Seasons:</span>
-            <span>March 2023, 2024</span>
+            <span className="text-white">March 2023, 2024</span>
           </div>
         </div>
       </div>

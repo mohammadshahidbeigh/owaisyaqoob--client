@@ -33,7 +33,7 @@ const Projects: React.FC = () => {
       </div>
 
       <div className="h-full w-full flex flex-col items-center py-10">
-        <h2 className="text-2xl md:text-4xl font-serif text-white mb-6">
+        <h2 className="text-2xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-12">
           Moments with Champions
         </h2>
         <div className="w-full flex flex-wrap justify-center gap-10 px-10">
@@ -56,6 +56,33 @@ const Projects: React.FC = () => {
             src="/gymF3.jpg"
             alt="Image with UFC fighter 4"
             description="With World Champion Khabib's  UFC Belt"
+          />
+          <ImageCard
+            src="/gymF4.jpg"
+            alt="Image with UFC fighter 4"
+            description="With Flyweight division Champion
+Tagir Ulanbekov"
+          />
+          <ImageCard
+            src="/gymF7.jpg"
+            alt="Image with UFC fighter 4"
+            description="With Khabib's School Coach Murad"
+          />
+          <ImageCard
+            src="/gymF8.jpg"
+            alt="Image with UFC fighter 4"
+            description="With 
+Ruslan - Wrestling and striking coach "
+          />
+          <ImageCard
+            src="/gymF10.jpg"
+            alt="Image with UFC fighter 4"
+            description="Matrix Fight Night Season 14- Weight Check "
+          />
+          <ImageCard
+            src="/gymF9.jpg"
+            alt="Image with UFC fighter 4"
+            description=" Matrix Fight Night Season 14- Walkout"
           />
           {/* Add more ImageCard components as needed */}
         </div>
