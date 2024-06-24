@@ -30,14 +30,29 @@ const Contact = () => {
   const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
+
+    if (!serviceID || !templateID || !userID) {
+      toast.error(
+        "Missing email configuration. Please check your environment variables.",
+        {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        }
+      );
+      return;
+    }
+
     if (formRef.current) {
       try {
-        await emailjs.sendForm(
-          "service_ac0r0lp",
-          "template_foahfct",
-          formRef.current,
-          "yKGeBjOaC9QJ2wIYy"
-        );
+        await emailjs.sendForm(serviceID, templateID, formRef.current, userID);
         setStatus("success");
         formRef.current.reset();
         toast.success("Your message has been sent successfully!", {
