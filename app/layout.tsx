@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Owais Yaqoob | MMA Fighter | Portfolio",
     description: "Owais Yaqoob | MMA Fighter |",
-    url: "https://owaisyaqoob.vercel.app",
+    url: "https://owaisyaqoob.com",
     siteName: "Owais Yaqoob - Portfolio",
     // images: "/opengraph-image.png",
     locale: "en-US",

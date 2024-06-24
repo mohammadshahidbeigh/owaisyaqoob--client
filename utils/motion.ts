@@ -28,19 +28,6 @@ export function sliderVariants(delay: number) {
   };
 }
 
-// export function slidingTextContainer() {
-//   return {
-//     position: 'absolute',
-//     fontSize: '50vh',
-//     bottom: '-120px',
-//     whiteSpace: 'nowrap',
-//     color: '#ffeeee09',
-//     width: '50%',
-//     fontWeight: 'bold',
-//     zIndex: 0,
-//   };
-// }
-
 export function slideInFromRight(delay: number) {
   return {
     hidden: { x: 100, opacity: 0 },
