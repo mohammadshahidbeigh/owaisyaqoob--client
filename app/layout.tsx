@@ -6,6 +6,7 @@ import Navbar from "@/components/main/Navbar";
 import Footer from "@/components/main/Footer";
 import "./globals.css";
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -49,13 +50,10 @@ export const metadata: Metadata = {
     description: "Owais Yaqoob | MMA Fighter |",
     url: "https://owaisyaqoob.com",
     siteName: "Owais Yaqoob - Portfolio",
-    // images: "/opengraph-image.png",
     locale: "en-US",
     type: "website",
   },
 };
-
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function RootLayout({
   children,
@@ -65,6 +63,9 @@ export default function RootLayout({
   return (
     <>
       <html lang="en">
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
         <body
           className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
         >
