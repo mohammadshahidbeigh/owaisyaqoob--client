@@ -2,30 +2,12 @@
 
 import React, { useRef, useState, FormEvent } from "react";
 import emailjs from "@emailjs/browser";
-import { motion, useInView } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-const variants = {
-  initial: {
-    y: 500,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      staggerChildren: 0.1,
-    },
-  },
-};
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<"success" | "error" | "idle">("idle");
-
-  const isInView = useInView(formRef, { margin: "-100px" });
 
   const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -82,17 +64,14 @@ const Contact = () => {
   return (
     <>
       <ToastContainer />
-      <motion.form
+      <form
         ref={formRef}
         className="contact flex flex-col md:flex-row items-center m-auto px-5 py-20"
-        variants={variants}
-        initial="initial"
-        whileInView="animate"
         onSubmit={sendEmail}
       >
         <ContactDetails />
         <ContactForm status={status} />
-      </motion.form>
+      </form>
     </>
   );
 };
@@ -121,14 +100,16 @@ const ContactDetails = () => (
   </div>
 );
 
-const ContactDetailItem = ({
-  label,
-  value,
-  link,
-}: {
+interface ContactDetailItemProps {
   label: string;
   value: string | { number: string; link: string }[];
   link?: string;
+}
+
+const ContactDetailItem: React.FC<ContactDetailItemProps> = ({
+  label,
+  value,
+  link,
 }) => (
   <div className="item font-bold text-white text-lg md:text-xl ml-3">
     <h2>{label}:</h2>
@@ -159,7 +140,11 @@ const ContactDetailItem = ({
   </div>
 );
 
-const ContactForm = ({ status }: { status: "success" | "error" | "idle" }) => (
+interface ContactFormProps {
+  status: "success" | "error" | "idle";
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({ status }) => (
   <div className="formContainer flex-1 ml-2 mr-2 mt-12">
     <div className="space-y-4">
       <input
