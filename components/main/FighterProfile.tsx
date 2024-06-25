@@ -1,12 +1,49 @@
 import React from "react";
 import Image from "next/image";
 
+interface FightResult {
+  season: string;
+  team: string;
+  result: string;
+  opponent: string;
+  bout: string;
+  date: string;
+  billing: string;
+  duration: string;
+  weight: string;
+}
+
+const fightResults: FightResult[] = [
+  {
+    season: "March 2023",
+    team: "MFN 11",
+    result: "Loss",
+    opponent: "Neeraj Panghal",
+    bout: "Guillotine Choke",
+    date: "31-03-2023",
+    billing: "Main Card",
+    duration: "Round 3",
+    weight: "Lightweight",
+  },
+  {
+    season: "March 2024",
+    team: "MFN 14",
+    result: "Win",
+    opponent: "Mohammad Azim Mokhlis",
+    bout: "Unanimous Decision",
+    date: "9-03-2024",
+    billing: "Main Card",
+    duration: "Round 3",
+    weight: "Lightweight",
+  },
+];
+
 const FighterProfile: React.FC = () => {
   return (
     <div className="container mx-auto px-4">
       {/* Fighter Profile Section */}
       <div className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 p-6 rounded-md shadow-lg w-full mb-8">
-        <h2 className="text-2xl md:text-4xl  font-bold mb-4 text-center">
+        <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center">
           Fight Stats
         </h2>
         <div className="flex flex-col sm:flex-row sm:flex-wrap justify-between items-center">
@@ -71,7 +108,7 @@ const FighterProfile: React.FC = () => {
           PRO RESULT
         </h2>
         <div className="bg-gray-900 rounded-md shadow-lg w-full overflow-x-auto">
-          <table className="min-w-full text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+          <table className="min-w-full">
             <thead className="bg-purple-500">
               <tr>
                 <th className="text-white py-2 px-4">SEASON</th>
@@ -86,45 +123,19 @@ const FighterProfile: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              <tr className="border-b border-purple-500">
-                <td className="text-white py-2 px-4">March 2023</td>
-                <td className="text-white py-2 px-4">MFN 11</td>
-                <td className="text-white py-2 px-4">Loss</td>
-                <td className="text-white py-2 px-4">Neeraj Panghal</td>
-                <td className="text-white py-2 px-4">Guillotine Choke</td>
-                <td className="text-white py-2 px-4">31-03-2023</td>
-                <td className="text-white py-2 px-4">Main Card</td>
-                <td className="text-white py-2 px-4">Round 3</td>
-                <td className="text-white py-2 px-4">Lightweight</td>
-              </tr>
-            </tbody>
-          </table>
-          <table className="mt-8 min-w-full text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-            <thead className="bg-purple-500">
-              <tr>
-                <th className="text-white py-2 px-4">SEASON</th>
-                <th className="text-white py-2 px-4">TEAM</th>
-                <th className="text-white py-2 px-4">RESULTS</th>
-                <th className="text-white py-2 px-4">OPPONENTS</th>
-                <th className="text-white py-2 px-4">BOUT</th>
-                <th className="text-white py-2 px-4">DATE</th>
-                <th className="text-white py-2 px-4">BILLING</th>
-                <th className="text-white py-2 px-4">DURATION</th>
-                <th className="text-white py-2 px-4">WEIGHT</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b border-purple-500">
-                <td className="text-white py-2 px-4">March 2024</td>
-                <td className="text-white py-2 px-4">MFN 14</td>
-                <td className="text-white py-2 px-4">Win</td>
-                <td className="text-white py-2 px-4">Mohammad Azim Mokhlis</td>
-                <td className="text-white py-2 px-4">Unanimous Decision</td>
-                <td className="text-white py-2 px-4">9-03-2024</td>
-                <td className="text-white py-2 px-4">Main Card</td>
-                <td className="text-white py-2 px-4">Round 3</td>
-                <td className="text-white py-2 px-4">Lightweight</td>
-              </tr>
+              {fightResults.map((result, index) => (
+                <tr key={index} className="border-b border-purple-500">
+                  <td className="text-white py-2 px-4">{result.season}</td>
+                  <td className="text-white py-2 px-4">{result.team}</td>
+                  <td className="text-white py-2 px-4">{result.result}</td>
+                  <td className="text-white py-2 px-4">{result.opponent}</td>
+                  <td className="text-white py-2 px-4">{result.bout}</td>
+                  <td className="text-white py-2 px-4">{result.date}</td>
+                  <td className="text-white py-2 px-4">{result.billing}</td>
+                  <td className="text-white py-2 px-4">{result.duration}</td>
+                  <td className="text-white py-2 px-4">{result.weight}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
