@@ -163,6 +163,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ status }) => (
       />
       <textarea
         rows={8}
+        required
         placeholder="Message"
         name="message"
         className="w-full p-2 border-b border-white bg-transparent text-white rounded"
